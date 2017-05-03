@@ -6,7 +6,8 @@ NOTE: This was downloaded from sourceforge.net ([PYSAP][])
 [PYSAP]: https://sourceforge.net/projects/pysaprfc/
 [Klavdij Voncina]: https://github.com/klavdijv
 
-Python SAP RFC module
+
+# Python SAP RFC module
 
 Pysaprfc is a Python wrapper around SAP librfc and provides easy access to SAP data-structures,
 tables and RFC enabled function modules.

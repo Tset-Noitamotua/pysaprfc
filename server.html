@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8:strict" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8:strict" />
+<meta name="generator" content="Docutils 0.2.9: http://docutils.sourceforge.net/" />
+<title>Implementing SAP RFC server in Python using pysap module</title>
+<link rel="stylesheet" href="default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="implementing-sap-rfc-server-in-python-using-pysap-module">
+<h1 class="title">Implementing SAP RFC server in Python using pysap module</h1>
+<div class="section" id="introduction">
+<h1><a name="introduction">Introduction</a></h1>
+<p>Pysap module provides a framework to implement the simplest form of RFC server for SAP enabling the developer to extend ABAP with function modules written in Python. The procces takes two steps:</p>
+<ol class="arabic simple">
+<li>writting Python script implemeting function(s) to export and registering the latter with SAP</li>
+<li>setting a remote TCP/IP destination in SAP system using the <strong>SM59</strong> transaction</li>
+</ol>
+</div>
+<div class="section" id="python">
+<h1><a name="python">Python</a></h1>
+<p>To implement function module in Python subclass the <strong>pysap.RFC_SERV_FUNC</strong> class, define its _name_, _exporting_, _importing_, and _tables_ attributes and override its <strong>run</strong> method.</p>
+<p>Example:</p>
+<pre class="literal-block">
+import pysap
+class MyFunc(pysap.RFC_SERV_FUNC):
+    _name_='Z_MY_FUNC'
+    _importing_=[(IN_VALUE','I')]
+    _exporting_=[(OUT_VALUE','I')]
+    
+    def run(self,handle):
+        self['OUT_VALUE']=2*self['IN_VALUE']
+...
+</pre>
+<p>This example defines simple function which takes one argument, an integer <cite>IN_VALUE</cite> defined in the _importing_ attribute, and returns <cite>OUT_VALUE</cite> which is also an integer. The _tables_ attribute is missing as no tables are used in this function. (The framework requires that at least one of _importing_, _exporting_, or _tables_ attributes is present in the subclass, but not necessarilly all of them.)</p>
+<div class="section" id="attributes-of-rfc-serv-func">
+<h2><a name="attributes-of-rfc-serv-func">Attributes of RFC_SERV_FUNC</a></h2>
+<dl>
+<dt><strong>_name_</strong></dt>
+<dd><p class="first">A string describing function name. This name will be used to register the function with the SAP system. To call the function defined in previous example from ABAP use:</p>
+<pre class="last literal-block">
+CALL FUNCTION 'Z_MY_FUNC' DEST 'ZDEST1'
+...
+</pre>
+</dd>
+<dt><strong>_doc_</strong></dt>
+<dd>This is an optional attribute containing documentation text to be passed to SAP system.</dd>
+<dt><strong>_importing_</strong>, <strong>_exporting_</strong>, <strong>_tables_</strong></dt>
+<dd><p class="first">The subclass must define at least one of these. These attributes define the function interface and correspond to the standard parts of the SAP function module definition. They are lists containing field definitions. Each field definition is a list with at least two elements. First element is the name of the parameter and the rest are single field/structure definitons. In case the argument is a simple datatype (<strong>C, N, P</strong>...) the second item is a single-character SAP datatype specifier (one of <em>'C', 'D', 'T', 'N', 'P', 'I', 'F', or 'X'</em>), and next two (optional) items are field length (mandatory for datatypes <em>'C', 'P', 'N', and 'X'</em>) and number of decimals (mandatory only for datatype <em>'P'</em>). For structures and tables (defined in _tables_ attribute) the field definition allways has two element, the second one being a list or tuple describing structure fields. This list has the same structure as the argument <cite>desc</cite> passed to the <strong>pysap.create_struct</strong> function.</p>
+<p class="last">Parameters defined in <tt class="literal"><span class="pre">_importing_</span></tt> are inbound - i.e. they are sent from SAP to the function before the <tt class="literal"><span class="pre">run</span></tt> method is invoked, parameters from <tt class="literal"><span class="pre">_exporting_</span></tt> are outbound - they are sent from function to the SAP after the <tt class="literal"><span class="pre">run</span></tt> method returns, and parameters (tables) defined in <tt class="literal"><span class="pre">__tables__</span></tt> are inboundoutbbound. They are received from SAP system before <tt class="literal"><span class="pre">run</span></tt> is invoked (overwritting any contents written in prior, for example in the <tt class="literal"><span class="pre">init_data</span></tt> method) and sent back to SAP after <tt class="literal"><span class="pre">run</span></tt> returns.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="accesing-function-parameters">
+<h2><a name="accesing-function-parameters">Accesing function parameters</a></h2>
+<p><tt class="literal"><span class="pre">self</span></tt> is acting as a dictionary with parameter names as keys and their values as values. To access the <strong>IN_VALUE</strong> parameter defined by the previous example use <tt class="literal"><span class="pre">self['IN_VALUE']</span></tt>. The keys are case insensitive.</p>
+</div>
+<div class="section" id="overriding-rfc-serv-func-methods">
+<h2><a name="overriding-rfc-serv-func-methods">Overriding RFC_SERV_FUNC methods</a></h2>
+<p>Following methods are provided for overriding:</p>
+<dl>
+<dt>run(self,handle)</dt>
+<dd><p class="first">Override this method to implement function logic. Use the parameter accessing technique described in previous chapter to access and manipulate parameter values. The <tt class="literal"><span class="pre">handle</span></tt> parameter contains the connection handle obtained from SAP.</p>
+<p><strong>Raising errors</strong>. Raise the <strong>pysap.SapFuncError</strong> to signal errors to the remote system. For example, to trigger the <tt class="literal"><span class="pre">NOT_NULL</span></tt> exception if the <tt class="literal"><span class="pre">IN_VALUE</span></tt> from the example equals 0 add following lines to the code:</p>
+<pre class="last literal-block">
+...
+def run(self,handle):
+    if self['IN_VALUE']==0:
+        raise pysap.SapFuncError('NOT_NULL')
+    self['OUT_VALUE']=2*self['IN_VALUE']
+...
+</pre>
+</dd>
+<dt>init_data(self,handle)</dt>
+<dd>This method gets called just before obtaining values from SAP system. Use it to set default values. Please note that in case of tables initial values are overwritten by data sent from SAP - setting default values in this case has no effect.</dd>
+</dl>
+</div>
+<div class="section" id="implementing-server">
+<h2><a name="implementing-server">Implementing server</a></h2>
+<p><strong>pysap.Rfc_server</strong> provides couple of methods to implement server mechanism:</p>
+<dl>
+<dt><tt class="literal"><span class="pre">register_func(self,func_obj)</span></tt></dt>
+<dd>Registers <tt class="literal"><span class="pre">func_obj</span></tt> with the server. <tt class="literal"><span class="pre">func_obj</span></tt> is a subclass (<strong>not instance</strong> thereof) of the <tt class="literal"><span class="pre">RFC_SERV_FUNC</span></tt>. You can register multiple functions with single server.</dd>
+<dt><tt class="literal"><span class="pre">main_loop(self,argv)</span></tt></dt>
+<dd>Starts the main loop. Pass it <tt class="literal"><span class="pre">sys.argv</span></tt> as a argument.</dd>
+</dl>
+<p>Previous example with server mechanism added:</p>
+<pre class="literal-block">
+import pysap
+class MyFunc(pysap.RFC_SERV_FUNC):
+    _name_='Z_MY_FUNC'
+    _importing_=[(IN_VALUE','I')]
+    _exporting_=[(OUT_VALUE','I')]
+    
+    def run(self,handle):
+        self['OUT_VALUE']=2*self['IN_VALUE']
+
+import sys
+srv=pysap.Rfc_server()
+try:
+    srv.register_func(MyFunc)
+    srv.main_loop(sys.argv)
+except pysap.SapRfcError:
+    sys.exit(1)
+</pre>
+</div>
+</div>
+<div class="section" id="sap">
+<h1><a name="sap">SAP</a></h1>
+<div class="section" id="defining-remote-destination">
+<h2><a name="defining-remote-destination">Defining remote destination</a></h2>
+<p>Please reffer to SAP documentation for the detailed explanation how to set the remote destinations using the transaction <strong>SM59</strong>. This is just a quick recipe how to set remote TCP/IP destination to use our function server.</p>
+<p>Start transaction <strong>SM59</strong>.</p>
+<p><strong>Create</strong> new destination.</p>
+<p>Set the name of the destination (ZTEST1).</p>
+<p>Set the destination type to <strong>T</strong> (TCP/IP) and enter the description. Selection screen changes.</p>
+<p>You have three choices from where to start the server application, select the one which suits your needs best:</p>
+<dl>
+<dt><strong>application server</strong></dt>
+<dd>Application runs on the same machine as the SAP server.</dd>
+<dt><strong>front-end workstation</strong></dt>
+<dd>Application runs on the same machine as the SAP GUI (that would be your machine).</dd>
+<dt><strong>explicit host</strong></dt>
+<dd>Application runs on the specific machine in the network.</dd>
+</dl>
+<p>Enter the name of the server application in field <cite>Program</cite>. Save and (optionally) test the destination.</p>
+<p>Tip: Script must be executable (specifiying something like <cite>python /path/to/func.py</cite> won't do). Under Linux adding something like <cite>#! /usr/bin/python</cite> at first line and making script executable (<cite>chmod +x func.py</cite>) will do, on Windows use Gordon McMillan's <strong>Installer</strong> or Thomas Heller's <strong>py2exe</strong> to produce standalone executable.</p>
+</div>
+<div class="section" id="calling-python-function-module-from-sap">
+<h2><a name="calling-python-function-module-from-sap">Calling Python function module from SAP</a></h2>
+<p>Use the ABAP standard command <cite>CALL FUNCTION</cite> with the <cite>DESTINATION</cite> extension.</p>
+<p>Example ABAP code to call function defined in the example at the start of this tutorial using remote destination 'ZTEST1' defined in previous chapter:</p>
+<pre class="literal-block">
+DATA: in_value TYPE I,
+      out_value TYPE I.  
+
+in_value = 5.
+
+CALL FUNCTION 'Z_MY_FUNC' DESTINATION 'ZTEST1'
+  EXPORTING
+    in_value
+  IMPORTING
+    out_value
+  EXCEPTIONS
+    NOT_NULL = 1
+    OTHERS = 2.
+
+IF SY-SUBRC NE 0.
+  WRITE: / 'Error calling remote function'.
+ENDIF.
+
+WRITE: / out_value.
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>

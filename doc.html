@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
+<TITLE>Pysap documentation</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<P ALIGN="center"><CENTER><H1>Pysap documentation</H1>
+<FONT SIZE=4>
+<I>Klavdij Voncina (klavdij.voncina@siol.net)</I><BR>
+Last changed: Fri May 16 21:29:32 2003
+</FONT></CENTER>
+
+<P>
+<HR NOSHADE SIZE=1>
+<P>
+<P>
+ <OL>
+ <LI><A HREF="#toc1">Introduction</A>
+  <UL>
+  <LI><A HREF="#toc2">1.1. Motivation</A>
+  <LI><A HREF="#toc3">1.2. Requirements</A>
+  <LI><A HREF="#toc4">1.3. Installation</A>
+  </UL>
+ <LI><A HREF="#toc5">Working with SAP datatypes in Python</A>
+  <UL>
+  <LI><A HREF="#toc6">2.1. Simple data</A>
+   <UL>
+   <LI><A HREF="#toc7">2.1.1. Methods for value access</A>
+   <LI><A HREF="#toc8">2.1.2. Creating simple data instances from Python</A>
+   </UL>
+  <LI><A HREF="#toc9">2.2. Structures</A>
+   <UL>
+   <LI><A HREF="#toc10">2.2.1. Accesing fields of structure</A>
+   <LI><A HREF="#toc11">2.2.2. Other structure methods and attributes</A>
+   </UL>
+  <LI><A HREF="#toc12">2.3. Tables</A>
+   <UL>
+   <LI><A HREF="#toc13">2.3.1. Creating tables</A>
+   <LI><A HREF="#toc14">2.3.2. Tables as Python lists</A>
+   <LI><A HREF="#toc15">2.3.3. Additional methods of ItTable instances</A>
+   <LI><A HREF="#toc16">2.3.4. Event handling</A>
+   </UL>
+  </UL>
+ <LI><A HREF="#toc17">Connecting to SAP systems</A>
+  <UL>
+  <LI><A HREF="#toc18">3.1. Rfc_connection</A>
+   <UL>
+   <LI><A HREF="#toc19">3.1.1. Opening a connection</A>
+   <LI><A HREF="#toc20">3.1.2. Closing the connection</A>
+   <LI><A HREF="#toc21">3.1.3. Using remote functions</A>
+   <LI><A HREF="#toc22">3.1.4. Remote function objects (RFC_FUNC)</A>
+   <LI><A HREF="#toc23">3.1.5. Retrieving data definitions from SAP system</A>
+   <LI><A HREF="#toc24">3.1.6. Retrieving data from SAP system</A>
+   </UL>
+  </UL>
+ <LI><A HREF="#toc25">TODO</A>
+ </OL>
+<P>
+<HR NOSHADE SIZE=1>
+<P>
+<P>
+<a name="toc1">
+<H1>1. Introduction</H1>
+<P>
+Pysaprfc is a wrapper around SAP librfc (librfc32.dll on Windows, librfccm.so or librfc.so on Linux). It uses
+the excellent ctypes extension package by Thomas Heller to access librfc and to define SAP compatible datatypes.
+<P>
+In times I started developing pysaprfc module there was no publicly available interface to access SAP from within
+Python. Things has changed lately as there is now a <B>saprfc.py</B> module written by the author of saprfc Perl and PHP 
+modules, Piers Harding. Being in an early development stage (as is my module), it currently provides basic mechanisms to
+access and manipulate SAP data structures and perform remote function calls using a small C wrapper around needed
+routines defined by librfc. Using ctypes my module has a small advandage over saprfc.py by having access to
+the whole of the librfc (almost, some ctypes limitations apply) without having the need to write (and compile) C wrappers.
+By examining Piers Hardings code (he's much greater SAP expert as I am) I also got some ideas how to generalize
+data and interface querrying to make my module more flexible. Other than that both projects are using different
+strategies and are developed independetly of each other - it's your choice which one suits your needs better.
+<P>
+<a name="toc2">
+<H2>1.1. Motivation</H2>
+<P>
+My main goal is to make Python a first class citizen of the SAP world - usefull both for client and server side
+(remote functions implemented in Python) programming. Currently only the client side is supported though.
+<P>
+In my opinion Python with its agile nature, fast development cycles and rich library of extension modules and packages
+is ideal companion to SAP system offering connectivity to external systems (web servers, external applications,
+RDBMs via Python DB API etc).
+<P>
+<a name="toc3">
+<H2>1.2. Requirements</H2>
+<P>
+Mandatory:
+<UL>
+<LI><A HREF="http://www.python.org">Python</A> (v 2.2 or newer)
+<LI>librfc by SAP AG suitable for your platform
+<BLOCKQUOTE>
+<P>
+	You must have access to SAP Market Place or OSS to be able to download it (you have to be registered  as user/developer with SAP for that).
+</BLOCKQUOTE>
+<BLOCKQUOTE>
+<P>
+	It comes also with SAPGui (Windows version).
+</BLOCKQUOTE>
+<P>
+<LI><A HREF="http://www.sf.net/projects/ctypes">ctypes</A> by Thomas Heller (v0.6.0 or newer)
+</UL>
+Optional:
+<UL>
+<LI><A HREF="http://www.egenix.com/files/python/mxDateTime.html">mxDateTime</A> by M.A. Lemburg
+<LI><A HREF="fixedpoint.sourceforge.net">FixedPoint</A> module
+</UL>
+Currently only SAP R/3 systems from version 4 onwards are supported. (Version 3.1 uses different data structures in
+some places - it should be possible to make pysaprfc work with 3.1 but I don't have access to a v3.1 system to test
+it. Piers Harding's saprfc.py does support 3.1)
+<P>
+<a name="toc4">
+<H2>1.3. Installation</H2>
+<P>
+Just copy pysap.py somewhere on your PYTHONPATH (site-packages for example). You can also use distutils, just
+cd to the folder where you unpacked the archive and type <CODE>python setup.py install</CODE> at command prompt.
+<P>
+<a name="toc5">
+<H1>2. Working with SAP datatypes in Python</H1>
+<P>
+There are three basic SAP types of data supported by pysaprfc:
+<UL>
+<LI>simple data (SAP types 'C', 'N', 'D' ... - represented as wrappers around C datatypes from ctypes package)
+<LI>structures (subclass of ctypes.Structure)
+<LI>internal tables (Python list-like wrapper around table handling routines and ITAB structure defined in librfc, see <I>sapitab.h</I>
+for more information.)
+</UL>
+<a name="toc6">
+<H2>2.1. Simple data</H2>
+<P>
+Following table shows SAP types recognized by pysaprfc along with their internal(ctypes, SAP formatted) and
+external (Python datatypes) representations.
+<P>
+<table cellpadding=4 border=1>
+<tr>
+<th>SAP datatype</th>
+<th>Short form (used by data definitons)</th>
+<th>Internal datatype (ctypes)</th>
+<th>Internal format (SAP)</th>
+<th>External datatype (Python)</th>
+</tr>
+<tr>
+<td>CHAR</td>
+<td>C</td>
+<td>array of c_ubyte</td>
+<td>left-aligned string filled with spaces</td>
+<td>string</td>
+</tr>
+<tr>
+<td>NUMC</td>
+<td>N</td>
+<td>array of c_ubyte</td>
+<td>right-aligned zero-filled string containg digits only</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>D</td>
+<td>array of c_ubyte</td>
+<td>string, format 'YYYYMMDD'</td>
+<td>string, format 'YYYYMMDD' or RFC_DATE_FORMAT if mxDateTime is installed</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>T</td>
+<td>array of c_ubyte</td>
+<td>string, format 'HHMMSS'</td>
+<td>string, format 'HHMMSS' or RFC_TIME_FORMAT if mxDateTime is installed</td>
+</tr>
+<tr>
+<td>PACKED</td>
+<td>P</td>
+<td>array of c_ubyte</td>
+<td>BCD (Binary Coded Decimal), functions from librfc are used to convert BCD to external value and vice versa</td>
+<td>float or FixedPoint instance if FixedPoint is available</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>F</td>
+<td>c_float</td>
+<td>float</td>
+<td>float</td>
+</tr>
+<tr>
+<td>INT4</td>
+<td>I</td>
+<td>c_int</td>
+<td>integer</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>BINARY</td>
+<td>X</td>
+<td>array of c_ubytes</td>
+<td>???</td>
+<td>ctypes</td>
+</tr>
+</table>
+
+<P>
+<a name="toc7">
+<H3>2.1.1. Methods for value access</H3>
+<P>
+All simple datatypes except I and F (which are mapped directly to their C counterparts via ctypes) have properties
+int_value and ext_value to acccess their internal and external value reperesentations respectivelly. Both internal and
+external values are suitable Python types. Internal value is formatted according to SAP specifications, extrenal
+value is formatted according to Python. For example if <I>field1</I> is defined as C10 and its value is <CODE>my_test</CODE> then <CODE>field1.int_value</CODE> yields
+<CODE>'my_test   '</CODE> and <CODE>field1.ext_value</CODE> yields <CODE>'my_test'</CODE>. 
+<P>
+<B>Notes:</B>
+<BLOCKQUOTE>
+	PACKED (P) has only ext_value (which is either float or FixedPoint instance) defined, int_value is merely an alias for ext_value.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+	FLOAT (F) and INT4 (I) are mapped directly to their ctypes equivalents (c_float and c_int). Use the <CODE>value</CODE> property to manipulate their values.
+</BLOCKQUOTE>
+<P>
+<a name="toc8">
+<H3>2.1.2. Creating simple data instances from Python</H3>
+<P>
+You won't need this very often but in case you do the best way is to use the X constuctor functions (XCHAR, XBCD, XINT ...)
+which are used by create_struct class factory. All constructor functions have the same signature - they accept 
+field length and number of decimals as argument and return a data class (not instance!!!) object.
+<P>
+Some examples:
+<PRE>
+  # Create a STRING instance (notice additional pair of brackets - XCHAR returns a class object so we must instantiate it)
+  str1=XCHAR(10)()
+  num1=XNUM(5)() # Creates a NUMC instance (5 characters long)
+  num1.ext_value=10 # Assign a value (must be integer for N external value)
+  print num1.int_value, num1.ext_value
+</PRE>
+(This prints: 00010 10)
+<PRE>
+  fl1=XFLOAT()() #No arguments needed
+  fl1.value=10.25
+  p1=XBCD(10,2)() #Creates a packed (bcd) instance - length 10, 2 decimal places
+  p1.ext_value=10.25
+  print fl1.value, p1.ext_value
+</PRE>
+(Prints: 10.250000001 10.25)
+<P>
+<a name="toc9">
+<H2>2.2. Structures</H2>
+<P>
+A subclass of ctypes.Structure is used to represent SAP stuctures in Python. Structure definitions are produced
+by <CODE>create_struct' class factory. </CODE>create_struct` takes a list of field definitions as its sole argument and
+returns a STRUCT class object which can be used to produce structure instances.
+<P>
+Field definiton is a tuple consisting of 2 to 4 elements:
+<UL>
+<LI>name (mandatory)
+<LI>type (single letter, mandatory)
+<LI>length (mandatory for types: C, N, P, X)
+<LI>number of decimals (mandatory for type P)
+</UL>
+<I>Example</I>
+<P>
+ABAP structure definiton:
+<PRE>
+  DATA: BEGIN OF my_struct,
+        desc(20) TYPE C,
+        value TYPE I,
+        value2(16) TYPE P DECIMALS 4,
+        date TYPE D,
+        value3(8) TYPE N.
+  DATA: END OF my_struct.
+</PRE>
+<P>
+Its Python equivalent:
+<PRE>
+  flds=[('desc','C',20),
+        ('value','I'),
+        ('value2','P',16,4),
+        ('date','D'),
+        ('value3','N',8)]
+  STRUCT1=pysaprfc.create_struct(flds)
+  my_struct=STRUCT1()
+</PRE>
+<P>
+<a name="toc10">
+<H3>2.2.1. Accesing fields of structure</H3>
+<P>
+There are two ways to access fields of the structure:
+<DL>
+<DT><B>by attribute</B></DT><DD> This one is inherited from the ctypes.Structure and yields reference to the field specified. Use its ext_value,
+int_value or value properties to manipulate its content.
+<P>
+<I>Examples:</I>
+<PRE>
+  print my_struct.field1.ext_value
+  my_struct.date.int_value='20030510'
+</PRE>
+<DT><B>as mapping item</B></DT><DD> STRUCT behaves as a dictionary using field names as keys and first value-accessing property of the
+field found in the list: <CODE>ext_value</CODE>, <CODE>int_value</CODE>, <CODE>value</CODE>, and field itself. Said in plain English this means <CODE>value</CODE>
+for types I and F, and <CODE>ext_value</CODE> for other types.
+<P>
+<I>Examples:</I>
+<PRE>
+  print my_struct['field1'] #The same as print my_struct.field1.ext_value
+  my_struct['date']='20.1.2003' #You need mxDateTime for this to work
+  #my_struct['date']='20030120' #If you don't have mxDateTime
+</PRE>
+<P>
+<B><I>Note:</I></B>
+<P>
+<I>Unlike common Python practice field names as keys are case-insensitive - my_stuct['field1'] and my_struct['FIELD1'] are the same.</I>
+<I>However, if you are accessing fields as attributes of the structure (dot notation) only lowercase is allowed.</I>
+<PRE>
+  my_struct.field1 # is OK (assuming field1 is defined)
+  my_struct.FIELD1 # raises AttributeError
+</PRE>
+</DL>
+<a name="toc11">
+<H3>2.2.2. Other structure methods and attributes</H3>
+<P>
+<DL>
+<DT><B>from_structure</B>(self,other)</DT><DD>
+<P>
+Copies structure <CODE>other</CODE> to <CODE>self</CODE>. It's not required for <CODE>other</CODE> to have the same field structure as `self' as
+this method simpy memcopies <CODE>other</CODE> to 'self`. Both structures must be compatible though for this method to produce
+meaningfull results. <I>(Better explanantion anybody, please?)</I>
+<P>
+<I>Example:</I>
+<PRE>
+  &gt;&gt;&gt; flds1=[('data','C',33)]
+  &gt;&gt;&gt; flds2=[('desc','C',5),('value1','N',10),('value2','N',10),('date','D')]
+  &gt;&gt;&gt; struct1=pysaprfc.create_struct(flds1)()
+  &gt;&gt;&gt; struct2=pysaprfc.create_struct(flds2)()
+  &gt;&gt;&gt; struct1['data']='test10000001000000000025020030510'
+  &gt;&gt;&gt; struct2.from_structure(struct1)
+  &gt;&gt;&gt; print struct2
+  desc = 'test1'
+  value1 = 1000
+  value2 = 250
+  date = '10.05.2003'
+  
+</PRE>
+</DL>
+<DL>
+<DT><B>from_list</B>(self,lst)</DT><DD>
+<P>
+Copies values from list <CODE>lst</CODE> to fields of <CODE>self</CODE> in the same order as defined in <CODE>self._fields_</CODE>.
+<P>
+<DT><B>from_dict</B>(self,dict)</DT><DD>
+<P>
+Copies values of <CODE>dict</CODE> to corresponding fields of <CODE>self</CODE>.
+<P>
+<DT><B>copy_corresp_from</B>(self,other,*fld_lst)</DT><DD>
+<P>
+Copies corresponding fields (i.e. fields having the same name in both structures) of <CODE>other</CODE> to <CODE>self</CODE>. Trying
+to copy uncompatible types might raise coercion errors so handle with care. If fld_lst is non-zero only fields listed in
+fld_lst will be copied.
+<P>
+<DT><B>sum_corresp_from</B>(self,other,*fld_lst)</DT><DD>
+<P>
+Adds values of corresponding fields of <CODE>other</CODE> to <CODE>self</CODE>. See also <B>copy_corresp_from</B>.
+<P>
+<DT><B>sap_type</B>(self,fld_name), <B>sap_len</B>(self,fld_name), <B>sap_decs</B>(self,fld_name), <B>sap_def</B>(self,fld_name)</DT><DD>
+<P>
+Helper functions to query type, length, number of decimals, and definiton of field <CODE>fld_name</CODE>.
+</DL>
+<a name="toc12">
+<H2>2.3. Tables</H2>
+<P>
+The class <B>ItTable</B> acts as a Python wrapper around <B>internal tables</B> as known in SAP. Although <B>ItTable</B>
+instances try to act and feel as ordinary Python lists they are in fact C structures defined by librfc and are using
+itab handling routines defined in librfc (see also sapitab.h included with RFCSDK and ItTable source).
+<P>
+<B>Usefull properties of ItTable</B>
+<P>
+<I>(Read-only)</I>
+<P>
+<DL>
+<DT><B>struc</B></DT><DD>
+<P>
+ItTable acts as list of rows sharing the same structure. You can use <B>struc</B> property to access the class defining row
+structure. You can use this to create new lines for <B>append</B> or <B>insert</B>.
+<P>
+Both
+<PRE>
+  new_line=itab.new_line()
+</PRE>
+<P>
+<P>
+and
+<PRE>
+  new_line=itab.struc()
+</PRE>
+<P>
+<P>
+are equivalent.
+<P>
+(<B>new_line</B> may become deprecated - better use <B>struc</B>() to create new rows)
+<P>
+<DT><B>handle</B></DT><DD>
+<P>
+This property stores a handle returned by librfc when creating new internal table. Use this handle to pass ItTable instances to librfc functions working with internal tables.
+<P>
+<DT><B>size</B></DT><DD>
+<P>
+Size of ItTable row (in bytes). You might need this when passing ItTable instances to librfc functions working with internal
+tables.
+<P>
+<DT><B>count</B></DT><DD>
+<P>
+Number of rows. This may get deprecated as you can now use <B>len</B> to get number of rows.
+</DL>
+<a name="toc13">
+<H3>2.3.1. Creating tables</H3>
+<P>
+<DL>
+<DT> </DT><DD>
+<PRE>
+  ItTable.__init__(self,name,struct,occurs=0)
+</PRE>
+<P>
+<I>name</I> - internal name of the table, needed by librfc
+<P>
+<I>struct</I> - table row structure - STRUCT class object as created by <B>create_struct</B>
+<P>
+<I>occurs</I> - parameter is needed by librfc (see SAP documentation)
+<PRE>
+  flds=[('desc','C',30),('value','N',10),('date','D')]
+  STRUCT1=pysaprfc.create_struct(flds)
+  itab=pysaprfc.ItTable('itab',STRUCT1)
+</PRE>
+</DL>
+<DL>
+<DT> </DT><DD>
+<PRE>
+  create_table(self,name,struct,occurs=0)
+</PRE>
+<P>
+<I>name</I> - internal name of the table, needed by librfc
+<P>
+<I>struct</I> - table row structure - field list
+<P>
+<I>occurs</I> - parameter is needed by librfc (see SAP documentation)
+<PRE>
+  flds=[('desc','C',30),('value','N',10),('date','D')]
+  itab=pysaprfc.create_table('itab',flds)
+</PRE>
+</DL>
+<a name="toc14">
+<H3>2.3.2. Tables as Python lists</H3>
+<P>
+<DL>
+<DT><B>Indexing and slicing</B></DT><DD>
+ItTable supports both indexing and slicing. Counting starts with 0 (Python way) and not 1 (SAP way)! Negative
+values are allowed and act as usuall for Python lists (itab[-1] returns last row of the ItTable itab). Indexing
+returns refernces to the actual table rows - any changes done to fields are reflected in table without the need
+of additional commands. This is unlike ABAP where <CODE>MODIFY</CODE> is needed to transfer changes done of the current line
+to the table.  
+<P>
+<I>Example</I>
+<P>
+ABAP:
+<PRE>
+  READ TABLE itab INDEX 1.
+  itab-field1 = 'new value'.
+  MODIFY itab INDEX 1.
+</PRE>
+Python:
+<PRE>
+  itab[0]['field1']='new value'
+</PRE>
+<P>
+<P>
+Slicing copies specified lines of source table to new instance of ItTable.
+<PRE>
+  # loop over lines 3 to 6 of itab
+  for l in itab[2:5]:
+      ...
+  
+</PRE>
+<P>
+Steps (or strides) are also possible with slicing. (Deleting and reading only, writting to slices using steps is currently
+not supported - I'm not sure how to implement it.)
+<P>
+<I>Example 1 - looping using steps</I>
+<PRE>
+  # Loop over even rows of itab
+  for wa in itab[::2]:
+      print wa
+  # Loop over itab in reverse order
+  for wa in itab[::-1]:
+      print wa
+</PRE>
+<P>
+<I>Example 2 - deleting odd rows of itab</I>
+<PRE>
+  delete itab[1::2]
+</PRE>
+</DL>
+<DL>
+<DT><B>Assigning values</B></DT><DD>
+<P>
+You can assign values both to 'normal' (single) indices and to slices. (Slices using steps like <CODE>itab[::2]</CODE> are not yet
+supported.) When assigning to slices only ItTable instances are allowed and when using single index only instances of
+row structure should be used. 
+<P>
+<DT><B>append</B> and <B>insert</B></DT><DD>
+<P>
+Both <CODE>append</CODE> and <CODE>insert</CODE> work the same way as their <CODE>list</CODE> equivalents. 
+</DL>
+<a name="toc15">
+<H3>2.3.3. Additional methods of ItTable instances</H3>
+<P>
+<DL>
+<DT><B>append_from_list</B>(self,lst)</DT><DD>
+Create a new row, fill it with values from <CODE>lst</CODE> and append it to <CODE>self</CODE>. Shortcut for:
+<PRE>
+  wa=itab.struc()
+  wa.from_list(lst)
+  itab.append(wa)
+</PRE>
+<P>
+<DT><B>append_from_table</B>(self,other)</DT><DD>
+Appends all rows of <CODE>other</CODE> to <CODE>self</CODE>. Row structures of both tables must be compatible (but not neccesarilly the same).
+<P>
+<DT><B>append_from_dict</B>(self,dict)</DT><DD>
+Like <B>append_from_list</B> but needs dictionary instead of list.
+<P>
+<DT><B>append_corresp_from_struct</B>(self,other)</DT><DD>
+Creates new row, copies corresponding fields from <CODE>other</CODE> (see <B>copy_corresp_from</B> method of <B>STRUCT</B> instances)
+and appends it to <CODE>self</CODE>.
+<P>
+<DT><B>append_corresp_from_table</B>(self,other)</DT><DD>
+Shortcut for:
+<PRE>
+  for wa in other:
+      itab.append_corresp_from(wa)
+</PRE>
+<P>
+<DT><B>get_line</B>(self,lno)</DT><DD>
+Returns a <B>reference</B> to lno-th row of <CODE>self</CODE>. Same as <CODE>self[lno]</CODE>. As reference to actual row in the table is returned
+all changes done to it will reflect in the table.
+<P>
+<DT><B>copy_line</B>(self,lno)</DT><DD>
+Returns a <B>copy</B> of lno-th row of <CODE>self</CODE> - changes made to it will not reflect in the table.
+</DL>
+<a name="toc16">
+<H3>2.3.4. Event handling</H3>
+<P>
+XXX To be done XXX
+<P>
+Please reffer to examples for now.
+<P>
+<a name="toc17">
+<H1>3. Connecting to SAP systems</H1>
+<P>
+<a name="toc18">
+<H2>3.1. Rfc_connection</H2>
+<P>
+<CODE>Rfc_connection</CODE> instances are used to connect to SAP systems and communicate with them.
+<P>
+<a name="toc19">
+<H3>3.1.1. Opening a connection</H3>
+<P>
+<I>Example</I> First create a new connection object:
+<PRE>
+  conn=pysap.Rfc_connection(conn_string='...')
+</PRE>
+and then open it:
+<PRE>
+  conn.open()
+</PRE>
+<P>
+<DL>
+<DT><CODE>__init__</CODE>(self,conn_string='',conn_file='',conn_name='')</DT><DD>
+<DT><CODE>open</CODE>(self,conn_string='',conn_file='',conn_name='')</DT><DD>
+<P>
+<I>conn_string</I> - connection string as specified by SAP. (Please see SAP documentation about <CODE>RfcOpenEx</CODE> function from librfc
+for more information.)
+<P>
+<I>conn_file</I> - name (string, file objects are currently not supported) of the .ini file compatible with <CODE>ConfigParser</CODE>
+module which comes with standard Python distribution. (See sapconn.ini in <CODE>examples</CODE> subfolder.)
+<P>
+<I>conn_name</I> - name of the section (in the .ini file) holding the connection details. If not specified first connection
+found will be used - this is not neccesarilly the first connection defined in .ini file!!! You should omit this argument only
+when only one connection is defined in the .ini file.
+<P>
+<B>Note</B>: <CODE>conn_string</CODE> and <CODE>conn_file</CODE> are muttually exclusive and if both are given, <CODE>conn_string</CODE> takes precedence.
+</DL>
+<a name="toc20">
+<H3>3.1.2. Closing the connection</H3>
+<P>
+Use the <B>close</B> method of Rfc_connection instance to disconnect from SAP system. Allthough implicit disconnection is
+assumed on deletion of Rfc_connection instance, explicit disconnect is considered a good practice.
+<P>
+<a name="toc21">
+<H3>3.1.3. Using remote functions</H3>
+<P>
+<B>Note</B>: I assume you are familiar with function modules - you now the difference between import/export/tables parameters,
+limitations regarding data structures suitable for remote transfer, which function modules can be remote-enabled, and other
+gory details of interacting with a complex beast that is the SAP R/3 system. If this is not the case please reffer to your SAP documentation before continuing with this document. I don't have skills nor time to explain details on how RFC works in
+SAP R/3.
+<P>
+<DL>
+<DT><B>get_interface</B>(self,f_name,include_desc=1)</DT><DD>
+Querries the SAP system for the definition of function module named <CODE>f_name</CODE>, builds a <CODE>RFC_FUNC</CODE> instance and returns its
+refference. If <CODE>include_desc</CODE> is non-zero the basic description accesible through the <CODE>desc</CODE> attribute is created. You can
+skip this with setting <CODE>include_desc</CODE> to 0 for possible (small) performance boost (untested).
+</DL>
+<a name="toc22">
+<H3>3.1.4. Remote function objects (RFC_FUNC)</H3>
+<P>
+<B>Important</B>: The afforementioned <B>get_interface</B> method of <CODE>Rfc_connection</CODE> is the sole way to create remote function
+objects. <B>Do not</B>, I repeat: <B>DO NOT</B> use the RFC_FUNC initializer <CODE>__init__</CODE> to create <CODE>RFC_FUNC</CODE> instances. They
+won't work.
+<P>
+<B>Important 2</B>: Do not try to reuse function object after the connection was closed and then reopened. Function objects store connection handle internally upon creation as immutable attribute. Recreate the function object instead if connection was reopened.
+<P>
+<CODE>RFC_FUNC</CODE> instances store function interface as defined in remote SAP system, provides access to its arguments and perform remote function calls.
+<P>
+<H4>3.1.4.1. Accesing function arguments</H4>
+<P>
+As said before SAP function modules provide four kinds of arguments:
+<UL>
+<LI>imports: these arguments are passed from caller to function module (function arguments)
+<LI>exports: these arguments are passed from function module to the caller (results)
+<LI>changing: these arguments can be passed in both way (they were not supported by RFC until recent versions of librfc - in pysap they are not supported).
+<LI>tables: SAP internal tables, can be passed both ways
+</UL>
+Function modules also define exceptions i.e. errors which can be raised during execution. (Error handling in ABAP - which is done mostly by examining the value of a system field <CODE>SY-SUBRC</CODE> is a bit outfashioned IMHO).
+<P>
+Arguments of remote function object can be accessed in two ways (simillar to the ways <CODE>STRUCT</CODE> fields can be accessed):
+<DL>
+<DT><B>as attributes</B> (using dot notation)</DT><DD>
+Attribute names are defined by function module interface in DDIC but are <B>all lowercase</B>. Returned values are <CODE>RFC_PARAM</CODE> instances holding argument attributes (SAP datatype, type of a argument: import/export/table, internal data needed by RFC
+interface, value etc.)
+<DT><B>as dictionary keys</B></DT><DD>
+Argument names as defined by SAP function module are used as keys and are case-insensitive (unlike common Python practice). Returned value is argument (which is a <CODE>RFC_PARAM</CODE> instance) value and not the <CODE>RFC_PARAM</CODE> instance itself (unlike the "as
+attribute" access method). Use this method to manipulate argument values and use "access as attribute" method to manipulate arguments themselves.
+</DL>
+When accessing function arguments in Python you don't have to specify their type (import/export/tables), this is done for
+you internally by pysap module. 
+<P>
+<I>Example</I>
+<P>
+Let's say we've created a function module called <CODE>Z_MY_FUNC</CODE> having following interface:
+<PRE>
+  IMPORTING
+    USER LIKE SY-UNAME OBLIGATORY
+  EXPORTING
+    NAME(20) TYPE CHAR
+    AGE TYPE I
+  TABLES
+    PERSONAL_DATA LIKE ZTABLE1.
+</PRE>
+The Python script to call this function and print its results would be something like <I>(caution - untested code)</I>:
+<PRE>
+  # Error handling is omitted
+  import pysap
+  # First open a connection
+  conn=pysap.Rfc_connection()
+  conn.open(conn_string='ASHOST=10.10.1.5 SYSNR=10 CLIENT=150 USER=hans PASSWD=strenggeheim')
+  # Create an instance of RFC_FUNC holding interface to our SAP function
+  func=conn.get_interface('Z_MY_FUNC')
+  # Set the arguments specified as imports (USER in our case)
+  # (Let's suppose PERSONAL_DATA is output only)
+  func['USER']='HANS'
+  # Call the function (instances of RFC_FUNC are callable)
+  rc=func()
+  # Print results
+  print func['NAME'],func['age'] # keys are case-insensitive
+  for wa in func['PERSONAL_DATA']: # PERSONAL_DATA value is an ItTable instance
+      print wa
+  # We're done so close the connection
+  conn.close()
+  # Don't try to use func past this point
+</PRE>
+<P>
+<H4>3.1.4.2. Specifying arguments to be passed to remote system</H4>
+<P>
+With SAP RFC you can specify which arguments are to be passed from/to remote system to save bandwith. (Mandatory arguments
+must be included with remote function call ofcourse, but other arguments may be omitted). This is especially usefull when invoking functions using lots of tables (many BAPIs fall into this category) - but not all of them are of interest to you. In that case you can omit certain arguments from remote function call. This can be done in two ways:
+<OL>
+<LI>Deactivating its arguments:
+<P>
+Set argument activity status to False using the <B>set_active</B> method of remote function object like so:
+<PRE>
+  func.set_active('PERSONAL_DATA',0)
+</PRE>
+<P>
+(You can of course use <CODE>func.set_active('PERSONAL_DATA')</CODE> to reactivate it again.)
+<P>
+<LI>Specifiying arguments at remote function call
+<P>
+Remote function calls accept additional fields defining arguments which will be passed to remote system.
+<PRE>
+  rc=func('USER','NAME')
+</PRE>
+In this case only USER and NAME arguments are passed to remote system.
+<P>
+<B>Note</B>: Omitting the USER argument would cause error to be raised as USER is defined as obligatory argument by SAP
+function definition.
+</OL>
+<B>Important</B> Trying to access inactive arguments will raise appropriate error. If you reactivate argument after function
+call has been done, you are on your own (no error will be raised as argument is now tagged as being active, but its value is
+undefined and accessing it can have disastreus consequences). You have been warned!
+<P>
+<H4>3.1.4.3. Reinitializing arguments</H4>
+<P>
+Between consecutive function calls function arguments should get reinitialized. This is done by calling the <B>initialize</B>
+method of the remote function object.
+<P>
+<a name="toc23">
+<H3>3.1.5. Retrieving data definitions from SAP system</H3>
+<P>
+<H4>3.1.5.1. Creating structures using DDIC definitions</H4>
+<P>
+Use the <B>get_structure</B> method of connection object to create pysap structures compatible with DDIC definitions. It takes
+one mandatory argument <CODE>s_name</CODE> which is a name of structure as defined in DDIC, and an optional number of arguments specifiying fields to be included. Returned value is a <CODE>STRUCT</CODE> class which can be used to create structure instances or to
+be passed to ItTable constructor (see also <B>get_table</B> method).
+<P>
+<B>get_structure</B> has couple of cousins: <B>get_fieldlist</B> and <B>get_fielddict</B> which take same arguments but return list
+and dictionary of fields definitons, respectivelly. <B>get_fieldlist</B> can be used to create 'extended' structures for example - use it to produce a list of field definitons obtained from SAP, then add your own field definitons to it and pass it to the
+<B>create_structure</B> function of pysap module to create a structure which is compatible to SAP definitions but has its own
+additional fields.
+<P>
+<B>get_table</B> creates internal table using the DDIC definition. It takes two arguments: mandatory <CODE>t_name</CODE> is structure name as defined in DDIC, and optional <CODE>inttab_name</CODE> is internal table's name as needed by librfc. If <CODE>inttab_name</CODE> is not specified <CODE>t_name</CODE> is used instead.
+<P>
+<a name="toc24">
+<H3>3.1.6. Retrieving data from SAP system</H3>
+<P>
+You can use the <B>read_table</B> method of connection object to read table data from SAP. <B>read_table</B> is a wrapper around
+RFC_READ_TABLE function module. See its documentation for arguments description and notes on its usage and limitations (row size).
+<P>
+See the <B>read_table</B> source code for an example of how RFC is performed using pysap module.
+<P>
+<a name="toc25">
+<H1>4. TODO</H1>
+<P>
+Better and more explainatory documentation. (Help from native English speaker is wellcome.)
+<P>
+Some tutorials.
+<P>
+Remote function modules in Python. Using ctypes this should be possible but I currently have no means to test it. (Company I work for is a contractor and don't have its own SAP server, messing with the servers of our customers is generally not a good idea.)
+<P>
+More unittests.
+<P>
+More examples.
+
+<!-- html code generated by txt2tags 1.5 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -t html --toc --maskemail -n -o /home/klavdij/develop/pysaprfc/doc.html doc.t2t -->
+</BODY></HTML>

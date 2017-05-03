@@ -1,0 +1,58 @@
+04.04.2004 - Release 1.0.0
+10.03-20.03.2004 - Some changes and fixes preparing for the stable release 1.0.0.
+             RFC_FUNC: 
+               imports(), exports() and tables() methods, returning names of parameters.
+               Better descriptions (desc nad desc_obj attributes).
+               func_args and func_res properties which enable more 'pythonic' way to call RFCs.
+               It's now possible to set structured parameters from dictionaries (key=field,value=field value),
+               and tables from a list of dictionaries, strings, lists, or tables.
+             Rfc_connection:
+               read_table now works with WAS 6.x and hopefully 4.7 systems.
+               New helper method search_functions() returns the list of RFC enabled functions in the remote system.
+               New helper method make_py_func() returns a function wrapper around RFC_FUNC.
+             
+24.09.2003 - Release 0.99.0 (first beta)
+24.09.2003 - Added pyabap.py and exmaple6.py demonstrating its usage.
+13.09.2003 - Fixed a long-standing bug in Rfc_connection.get_interface.
+             Added example3a.py which demonstrates usage of conversion routines.
+11.09.2003 - The set_conversion method now also accepts a list of field names as the first argument. Unit tests for
+             conversion routines.
+10.09.2003 - Conversion routines via convert_input and convert_output attributes. Currently supported
+             types are 'C', 'N', 'D', 'T', and 'P'. Use the set_conversion classmethod of STRUCT class to
+             add conversion routines to fields of a structure (Single character fields are not (yet) supported.)
+             Some fixes for DATE datatype (handling of initial values).
+08.09.2003 - Added support for SAP INT1 and INT2 datatypes and append_from_string method to the ItTable
+07.09.2003 - Added the exec_abap and exec_abap_file to the Rfc_connection object allowing execution of arbitrary
+             ABAP code on the target client without the need of installing it.
+             Some changes to the initialization of SAP datatypes. (Passing None now sets datatype to its initial value.)
+27.08.2003 - First attempt at STRING datatype. Untested.
+26.08.2003 - Fixed a bug in create_struct.
+11.07.2003 - Release 0.2.2
+07.07.2003 - Undone the "length of BCD fields" fix. The size should be in bytes, not in digits.
+             When calling RFC_SERV_FUNC the init_data method should be called before get_data. Fixed.
+06.07.2003 - Added the connection attribute to the RFC_SERV_FUNC to enable performing RFCs from RFC server.
+             Fixed the length of BCD fields (type P) returned from get_fieldlist, get_fielddict and get_structure
+             methods of Rfc_connection. Reported length was in bytes, we need digits.
+05.07.2003 - Alternative implementation of RFC server (RfcServEx). This version uses RfcGetName(Ex) instead
+             of RfcDispatch and as such doesn't need the C callback function. Seems more stable as RfcServ.
+             Fix for to_string and from_string methods of class STRUCT.
+27.06.2003 - Bugfixes for Storage object. One can now even use stored function interface definitions for 
+             RFC_SERV_FUNC objects (_interface_from_) :-)
+26.06.2003 - Release 0.2.1
+23.06.2003 - Support for RFC enabled SAP R/3 systems prior to version 4.0
+14.06.2003 - Release 0.2.0
+09.06.2003 - Some adjustment to the Storage objects and sap_get_defs.py
+06.06.2003 - Implemented the Storage object (a wrapper around shelve) to store data definitions and function
+             interfaces. Added a simple script sap_get_defs.py in the tools directory to facilitate its usage.
+05.06.2003 - Some adjustments to the server interface.
+02.06.2003 - Finished basic server implementation. The interface might change in future.
+28.05.2003 - Fixed stupid mistake - ItTable should be new-style class as it uses properties.
+             Added optional argument 'handle' to the ItTable __init__ method to allow external handles (i.e.
+             tables passed from SAP system) to be used. This is for upcoming server-side ability.
+24.05.2003 - Treat integers and all-digit strings as datatype N when assigning to string (datatype C) - experimental 
+19.05.2003 - Structures: added support for equality checking (__eq__ and __ne__ methods), implemented is_equal method,
+             added methods to convert structure to/from string.
+             Improved table field event handling (event handler constructor now accepts field lists to chain fields).
+16.05.2003 - First public release
+15.05.2003 - Added basic unit tests
+14.05.2003 - Initial release (to CVS)

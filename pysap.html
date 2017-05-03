@@ -1,0 +1,1933 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pysap</title>
+<style type="text/css"><!--
+TT { font-family: lucidatypewriter, lucida console, courier }
+--></style></head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>pysap</strong></big></big> (version 1.0.0rc1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/klavdij/release/pysaprfc/pysap.py">/home/klavdij/release/pysaprfc/pysap.py</a></font></td></tr></table>
+    <p></p>
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="mx.DateTime.html">mx.DateTime</a><br>
+<a href="shelve.html">shelve</a><br>
+</td><td width="25%" valign=top><a href="ctypes.html">ctypes</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+<a href="types.html">types</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="exceptions.html#Exception">exceptions.Exception</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#SapFuncError">SapFuncError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#SapRfcError">SapRfcError</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="pysap.html#ItabFieldEventHandler">ItabFieldEventHandler</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_ARGS">RFC_ARGS</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RfcServerEx">RfcServerEx</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#Storage">Storage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="_ctypes.html#Structure">_ctypes.Structure</a>(_ctypes._CData)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#RFC_ERROR_INFO_EX">RFC_ERROR_INFO_EX</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_PARAMETER_ADMIN">RFC_PARAMETER_ADMIN</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_PARAM_STACK">RFC_PARAM_STACK</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_TYPE_ELEMENT">RFC_TYPE_ELEMENT</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ctypes.html#c_byte">ctypes.c_byte</a>(<a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#_SapInt1">_SapInt1</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ctypes.html#c_char_p">ctypes.c_char_p</a>(<a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#_Sap_string">_Sap_string</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ctypes.html#c_float">ctypes.c_float</a>(<a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#_SapFloat">_SapFloat</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ctypes.html#c_int">ctypes.c_int</a>(<a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#_SapInt">_SapInt</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ctypes.html#c_short">ctypes.c_short</a>(<a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#_SapInt2">_SapInt2</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#ItTable">ItTable</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_FUNC">RFC_FUNC</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_PARAM">RFC_PARAM</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#RFC_SERV_FUNC">RFC_SERV_FUNC</a>
+</font></dt><dt><font face="helvetica, arial"><a href="pysap.html#Rfc_connection">Rfc_connection</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pysap.html#Rfc_connection_serv">Rfc_connection_serv</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BaseSapRfcError">class <strong>BaseSapRfcError</strong></a>(<a href="exceptions.html#Exception">exceptions.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BaseSapRfcError-__init__"><strong>__init__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="BaseSapRfcError-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="BaseSapRfcError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ItTable">class <strong>ItTable</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Pythonic&nbsp;representation&nbsp;of&nbsp;what&nbsp;is&nbsp;called&nbsp;internal&nbsp;table&nbsp;in&nbsp;SAP&nbsp;R/3.<br>
+<a href="#ItTable">ItTable</a>&nbsp;tries&nbsp;to&nbsp;behave&nbsp;as&nbsp;python&nbsp;list&nbsp;-&nbsp;it&nbsp;supports&nbsp;indexing,&nbsp;slicing,&nbsp;sorting&nbsp;etc.<br>
+Indices&nbsp;starts&nbsp;with&nbsp;0&nbsp;(Python&nbsp;fashion)&nbsp;and&nbsp;not&nbsp;with&nbsp;1&nbsp;(SAP&nbsp;fashion).<br>
+<a href="#ItTable">ItTable</a>&nbsp;provides&nbsp;event&nbsp;handling&nbsp;similar&nbsp;to&nbsp;AT&nbsp;FIRST,&nbsp;AT&nbsp;LAST,&nbsp;AT&nbsp;NEW,&nbsp;and&nbsp;AT&nbsp;ENDOF&nbsp;events&nbsp;of&nbsp;ABAP&nbsp;loops.<br>
+Assign&nbsp;callback&nbsp;functions&nbsp;to&nbsp;on_first&nbsp;and/or&nbsp;on_last&nbsp;properties&nbsp;to&nbsp;simulate&nbsp;AT&nbsp;FIRST&nbsp;and&nbsp;AT&nbsp;LAST&nbsp;behaviour&nbsp;of<br>
+ABAP&nbsp;loops&nbsp;in&nbsp;Python,&nbsp;and&nbsp;create&nbsp;field&nbsp;event&nbsp;handlers&nbsp;with&nbsp;add_field_handler&nbsp;to<br>
+simulate&nbsp;ABAP&nbsp;AT&nbsp;NEW&nbsp;and&nbsp;AT&nbsp;ENDOF&nbsp;for&nbsp;choosen&nbsp;fields.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ItTable-_ItTable__get_count"><strong>_ItTable__get_count</strong></a> = __get_count(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__get_handle"><strong>_ItTable__get_handle</strong></a> = __get_handle(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__get_size"><strong>_ItTable__get_size</strong></a> = __get_size(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__get_struct"><strong>_ItTable__get_struct</strong></a> = __get_struct(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__handle_endof"><strong>_ItTable__handle_endof</strong></a> = __handle_endof(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__handle_every"><strong>_ItTable__handle_every</strong></a> = __handle_every(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__handle_new"><strong>_ItTable__handle_new</strong></a> = __handle_new(self)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__handle_slice"><strong>_ItTable__handle_slice</strong></a> = __handle_slice(self, indx)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__partition"><strong>_ItTable__partition</strong></a> = __partition(self, cmp_func, start, end)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__quicksort"><strong>_ItTable__quicksort</strong></a> = __quicksort(self, cmp_func, start, end)</dt></dl>
+
+<dl><dt><a name="ItTable-_ItTable__set_handle"><strong>_ItTable__set_handle</strong></a> = __set_handle(self, new_handle)</dt></dl>
+
+<dl><dt><a name="ItTable-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ItTable-__delitem__"><strong>__delitem__</strong></a>(self, indx)</dt></dl>
+
+<dl><dt><a name="ItTable-__getitem__"><strong>__getitem__</strong></a>(self, indx)</dt></dl>
+
+<dl><dt><a name="ItTable-__init__"><strong>__init__</strong></a>(self, name, struc, occurs<font color="#909090">=0</font>, handle<font color="#909090">=0</font>)</dt><dd><tt>name&nbsp;-&nbsp;the&nbsp;name&nbsp;of&nbsp;internal&nbsp;table,&nbsp;used&nbsp;internally&nbsp;by&nbsp;SAP<br>
+struct&nbsp;-&nbsp;class&nbsp;(not&nbsp;instance!)&nbsp;created&nbsp;with&nbsp;create_struct&nbsp;class&nbsp;factory<br>
+occurs&nbsp;(optional)&nbsp;-&nbsp;see&nbsp;SAP&nbsp;documentation<br>
+&nbsp;<br>
+Each&nbsp;line&nbsp;of&nbsp;the&nbsp;<a href="#ItTable">ItTable</a>&nbsp;is&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;STRUCT&nbsp;class.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ItTable-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ItTable-__setitem__"><strong>__setitem__</strong></a>(self, indx, data)</dt></dl>
+
+<dl><dt><a name="ItTable-_copy_handlers"><strong>_copy_handlers</strong></a>(self, f_hnds)</dt></dl>
+
+<dl><dt><a name="ItTable-add_field_handler"><strong>add_field_handler</strong></a>(self, fld_name)</dt><dd><tt>Adds&nbsp;an&nbsp;ItabFieldHandler&nbsp;instance&nbsp;to&nbsp;list&nbsp;of&nbsp;field&nbsp;handlers&nbsp;and&nbsp;returns&nbsp;its&nbsp;reference&nbsp;for&nbsp;further&nbsp;manipulation.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append"><strong>append</strong></a>(self, data)</dt><dd><tt>Appends&nbsp;new&nbsp;line&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;table.&nbsp;Data&nbsp;must&nbsp;be&nbsp;an&nbsp;instance&nbsp;of&nbsp;self.<strong>struc</strong>.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append_corresp_from_struct"><strong>append_corresp_from_struct</strong></a>(self, other)</dt><dd><tt>Appends&nbsp;new&nbsp;line&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;table&nbsp;and&nbsp;fills&nbsp;it&nbsp;with&nbsp;corresponding&nbsp;fields&nbsp;of&nbsp;structure&nbsp;other.<br>
+See&nbsp;also&nbsp;STRUCT.copy_corresp_from.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append_corresp_from_table"><strong>append_corresp_from_table</strong></a>(self, other)</dt><dd><tt>Appends&nbsp;new&nbsp;lines&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;table&nbsp;and&nbsp;fills&nbsp;them&nbsp;with&nbsp;corresponding&nbsp;fields&nbsp;from&nbsp;lines&nbsp;of&nbsp;table&nbsp;other.<br>
+See&nbsp;also&nbsp;STRUCT.copy_corresp_from.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append_from_dict"><strong>append_from_dict</strong></a>(self, dic)</dt><dd><tt>Appends&nbsp;new&nbsp;line&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;table&nbsp;and&nbsp;fills&nbsp;it&nbsp;with&nbsp;corresponding&nbsp;values&nbsp;from&nbsp;dictionary&nbsp;dict.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append_from_list"><strong>append_from_list</strong></a>(self, lst)</dt><dd><tt>Appends&nbsp;new&nbsp;line&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;table&nbsp;and&nbsp;fills&nbsp;it&nbsp;with&nbsp;corresponding&nbsp;values&nbsp;from&nbsp;list&nbsp;lst.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-append_from_string"><strong>append_from_string</strong></a>(self, s)</dt></dl>
+
+<dl><dt><a name="ItTable-append_from_table"><strong>append_from_table</strong></a>(self, other)</dt><dd><tt>Appends&nbsp;all&nbsp;lines&nbsp;of&nbsp;<a href="#ItTable">ItTable</a>&nbsp;other&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;itself.&nbsp;self.<strong>struc</strong>&nbsp;and&nbsp;other.struc&nbsp;must&nbsp;be&nbsp;compatible<br>
+(but&nbsp;not&nbsp;necessary&nbsp;the&nbsp;same).&nbsp;See&nbsp;also&nbsp;STRUCT.from_structure.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-copy_line"><strong>copy_line</strong></a>(self, lno)</dt><dd><tt>Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;lno-th&nbsp;line&nbsp;of&nbsp;the&nbsp;table.<br>
+Changes&nbsp;to&nbsp;returned&nbsp;line&nbsp;will&nbsp;not&nbsp;be&nbsp;reflected&nbsp;in&nbsp;<a href="#ItTable">ItTable</a>.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-create_line"><strong>create_line</strong></a>(self)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;self.<strong>__struct</strong>.&nbsp;Alias&nbsp;for&nbsp;struct().</tt></dd></dl>
+
+<dl><dt><a name="ItTable-fill"><strong>fill</strong></a>(self, val_list)</dt><dd><tt>Appends&nbsp;new&nbsp;lines&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;table&nbsp;and&nbsp;fills&nbsp;them&nbsp;with&nbsp;values&nbsp;stored&nbsp;in&nbsp;a&nbsp;list&nbsp;of&nbsp;values&nbsp;val_list.<br>
+Allowed&nbsp;value&nbsp;types&nbsp;are&nbsp;str,&nbsp;list,&nbsp;tuple,&nbsp;dict,&nbsp;and&nbsp;<a href="#ItTable">ItTable</a>.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-get_field_handler"><strong>get_field_handler</strong></a>(self, indx)</dt><dd><tt>Returns&nbsp;ItabFieldHandler&nbsp;instance&nbsp;with&nbsp;index&nbsp;indx&nbsp;from&nbsp;field&nbsp;handlers&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-get_line"><strong>get_line</strong></a>(self, lno)</dt></dl>
+
+<dl><dt><a name="ItTable-insert"><strong>insert</strong></a>(self, indx, data)</dt><dd><tt>Inserts&nbsp;new&nbsp;line&nbsp;at&nbsp;given&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-next"><strong>next</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ItTable-refresh"><strong>refresh</strong></a>(self)</dt><dd><tt>Clears&nbsp;the&nbsp;table.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-refresh_fill"><strong>refresh_fill</strong></a>(self, val_list)</dt><dd><tt>Empties&nbsp;the&nbsp;table&nbsp;and&nbsp;then&nbsp;fills&nbsp;it&nbsp;with&nbsp;values&nbsp;stored&nbsp;in&nbsp;a&nbsp;list&nbsp;of&nbsp;values&nbsp;val_list.<br>
+See&nbsp;also&nbsp;<a href="#ItTable">ItTable</a>.fill.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-remove_all_handlers"><strong>remove_all_handlers</strong></a>(self)</dt><dd><tt>Like&nbsp;remove_field_handlers&nbsp;but&nbsp;it&nbsp;also&nbsp;empties&nbsp;on_first&nbsp;and&nbsp;on_last&nbsp;properties.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-remove_field_handler"><strong>remove_field_handler</strong></a>(self, indx)</dt><dd><tt>Removes&nbsp;ItabFieldHandler&nbsp;instance&nbsp;with&nbsp;index&nbsp;indx&nbsp;from&nbsp;field&nbsp;handlers&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-remove_field_handlers"><strong>remove_field_handlers</strong></a>(self)</dt><dd><tt>Empties&nbsp;field&nbsp;handlers&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="ItTable-sort"><strong>sort</strong></a>(self, cmp_func)</dt><dd><tt>Sort&nbsp;table&nbsp;using&nbsp;cmp_func.<br>
+Use&nbsp;the&nbsp;create_sort_func&nbsp;function&nbsp;to&nbsp;create&nbsp;cmp_func.<br>
+(You&nbsp;can&nbsp;also&nbsp;code&nbsp;your&nbsp;own&nbsp;sort&nbsp;function,&nbsp;of&nbsp;course).</tt></dd></dl>
+
+<dl><dt><a name="ItTable-to_list"><strong>to_list</strong></a>(self, *kys)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>count</strong></dt>
+<dd><tt>Number&nbsp;of&nbsp;lines&nbsp;-&nbsp;read&nbsp;only</tt></dd>
+<dd><dl><dt><a name="ItTable-count getter"><strong>count getter</strong></a> = __get_count(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>handle</strong></dt>
+<dd><tt>Rfc&nbsp;table&nbsp;handle&nbsp;-&nbsp;read&nbsp;only</tt></dd>
+<dd><dl><dt><a name="ItTable-handle getter"><strong>handle getter</strong></a> = __get_handle(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="ItTable-handle setter"><strong>handle setter</strong></a> = __set_handle(self, new_handle)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>size</strong></dt>
+<dd><tt>Size&nbsp;(in&nbsp;bytes)&nbsp;of&nbsp;a&nbsp;line&nbsp;-&nbsp;read&nbsp;only</tt></dd>
+<dd><dl><dt><a name="ItTable-size getter"><strong>size getter</strong></a> = __get_size(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>struc</strong></dt>
+<dd><tt><a href="_ctypes.html#Structure">Structure</a>&nbsp;class&nbsp;definiton&nbsp;-&nbsp;read&nbsp;only</tt></dd>
+<dd><dl><dt><a name="ItTable-struc getter"><strong>struc getter</strong></a> = __get_struct(self)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Pythonic representation of what is called inter...ate ABAP AT NEW and AT ENDOF for choosen fields.<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'ItTable' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="ItTable-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="ItTable-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#ItTable-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#ItTable-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ItabFieldEventHandler">class <strong>ItabFieldEventHandler</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Event&nbsp;handler&nbsp;for&nbsp;fields&nbsp;of&nbsp;<a href="#ItTable">ItTable</a>.<br>
+Assign&nbsp;callback&nbsp;functions&nbsp;to&nbsp;its&nbsp;on_new,&nbsp;on_endof,&nbsp;and&nbsp;on_every&nbsp;properties.&nbsp;Signature&nbsp;of&nbsp;callback&nbsp;functions&nbsp;must<br>
+be&nbsp;f(fh,wa).&nbsp;fh&nbsp;is&nbsp;an&nbsp;instance&nbsp;of&nbsp;<a href="#ItabFieldEventHandler">ItabFieldEventHandler</a>&nbsp;(self),&nbsp;and&nbsp;wa&nbsp;is&nbsp;an&nbsp;instance&nbsp;of&nbsp;STRUCTURE&nbsp;holding&nbsp;the&nbsp;current<br>
+line&nbsp;of&nbsp;the&nbsp;associated&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance.<br>
+Events&nbsp;will&nbsp;be&nbsp;fired&nbsp;when&nbsp;looping&nbsp;through&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance&nbsp;(or&nbsp;by&nbsp;calling&nbsp;its&nbsp;next&nbsp;method).<br>
+Note&nbsp;1:&nbsp;you&nbsp;should&nbsp;use&nbsp;the&nbsp;add_field_handler&nbsp;method&nbsp;of&nbsp;the&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance&nbsp;to&nbsp;instantiate&nbsp;the&nbsp;ItabEventHandler&nbsp;instance<br>
+(and&nbsp;not&nbsp;the&nbsp;class&nbsp;__init__&nbsp;method),&nbsp;i.e.&nbsp;use&nbsp;fh=itab.add_field_handler('field1')&nbsp;instead&nbsp;of&nbsp;fh=ItabFieldHandler(itab,'field1').<br>
+Note&nbsp;2:&nbsp;<a href="#ItTable">ItTable</a>&nbsp;should&nbsp;be&nbsp;sorted&nbsp;for&nbsp;event&nbsp;handling&nbsp;to&nbsp;function&nbsp;correctly.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ItabFieldEventHandler-__init__"><strong>__init__</strong></a>(self, itab, fld)</dt></dl>
+
+<dl><dt><a name="ItabFieldEventHandler-_check_endof"><strong>_check_endof</strong></a>(self, indx)</dt><dd><tt>Check&nbsp;if&nbsp;field&nbsp;value&nbsp;will&nbsp;change&nbsp;in&nbsp;next&nbsp;step.</tt></dd></dl>
+
+<dl><dt><a name="ItabFieldEventHandler-_check_every"><strong>_check_every</strong></a>(self, indx)</dt><dd><tt>Executes&nbsp;once&nbsp;for&nbsp;each&nbsp;step.</tt></dd></dl>
+
+<dl><dt><a name="ItabFieldEventHandler-_check_new"><strong>_check_new</strong></a>(self, indx)</dt><dd><tt>Check&nbsp;if&nbsp;the&nbsp;field&nbsp;value&nbsp;has&nbsp;changed&nbsp;from&nbsp;previous&nbsp;step.</tt></dd></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Event handler for fields of ItTable.<font color="#c040c0">\n</font>Assign cal...sorted for event handling to function correctly.<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_ARGS">class <strong>RFC_ARGS</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;is&nbsp;a&nbsp;collection&nbsp;of&nbsp;parameters&nbsp;(see&nbsp;<a href="#RFC_PARAM">RFC_PARAM</a>)&nbsp;defined&nbsp;by&nbsp;the&nbsp;function&nbsp;module&nbsp;interface.&nbsp;It's&nbsp;purpose<br>
+is&nbsp;to&nbsp;store&nbsp;parameters&nbsp;and&nbsp;to&nbsp;build&nbsp;data&nbsp;structures&nbsp;needed&nbsp;by&nbsp;remote&nbsp;function&nbsp;calls.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_all"><strong>_RFC_ARGS__add_all</strong></a> = __add_all(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_exports"><strong>_RFC_ARGS__add_exports</strong></a> = __add_exports(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_exports_srv"><strong>_RFC_ARGS__add_exports_srv</strong></a> = __add_exports_srv(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_imports"><strong>_RFC_ARGS__add_imports</strong></a> = __add_imports(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_imports_srv"><strong>_RFC_ARGS__add_imports_srv</strong></a> = __add_imports_srv(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_tables"><strong>_RFC_ARGS__add_tables</strong></a> = __add_tables(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__add_tables_srv"><strong>_RFC_ARGS__add_tables_srv</strong></a> = __add_tables_srv(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-_RFC_ARGS__num_params"><strong>_RFC_ARGS__num_params</strong></a> = __num_params(self, typ)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-__getitem__"><strong>__getitem__</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-__setitem__"><strong>__setitem__</strong></a>(self, ky, v)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-add_param"><strong>add_param</strong></a>(self, p)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-field"><strong>field</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-get_stack"><strong>get_stack</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-get_stack_srv"><strong>get_stack_srv</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-items"><strong>items</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-keys"><strong>keys</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-raw_value"><strong>raw_value</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-reset"><strong>reset</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-set_stack_srv"><strong>set_stack_srv</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_ARGS-values"><strong>values</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>This class is a collection of parameters (see R...data structures needed by remote function calls.<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_ERROR_INFO_EX">class <strong>RFC_ERROR_INFO_EX</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#RFC_ERROR_INFO_EX">RFC_ERROR_INFO_EX</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_ERROR_INFO_EX' objects&gt;</dl>
+
+<dl><dt><strong>_fields_</strong> = [('group', &lt;class 'ctypes.c_int'&gt;), ('key', &lt;class 'pysap.cls_string'&gt;), ('message', &lt;class 'pysap.cls_string'&gt;)]</dl>
+
+<dl><dt><strong>group</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>key</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>message</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="RFC_ERROR_INFO_EX-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.StructType object&gt;<dd><tt>T.<a href="#RFC_ERROR_INFO_EX-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="RFC_ERROR_INFO_EX-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_ERROR_INFO_EX-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_ERROR_INFO_EX-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_ERROR_INFO_EX-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_ERROR_INFO_EX-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_ERROR_INFO_EX-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_ERROR_INFO_EX-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_ERROR_INFO_EX-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.StructType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_FUNC">class <strong>RFC_FUNC</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;stores&nbsp;the&nbsp;function&nbsp;module&nbsp;interface.&nbsp;It's&nbsp;constructed&nbsp;from&nbsp;SAP&nbsp;function&nbsp;module&nbsp;by&nbsp;querrying<br>
+its&nbsp;interface&nbsp;using&nbsp;the&nbsp;get_interface&nbsp;method&nbsp;of&nbsp;the&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.&nbsp;Arguments&nbsp;are&nbsp;stored&nbsp;in&nbsp;self.<strong>__args</strong>&nbsp;and<br>
+can&nbsp;be&nbsp;accesed&nbsp;as&nbsp;keys&nbsp;or&nbsp;attributes&nbsp;of&nbsp;the&nbsp;class.&nbsp;(func.kunnr.ext_value&nbsp;or&nbsp;func['kunnr'])<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RFC_FUNC-_RFC_FUNC__check_args"><strong>_RFC_FUNC__check_args</strong></a> = __check_args(self, name, args, allowed)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-_RFC_FUNC__get_arguments"><strong>_RFC_FUNC__get_arguments</strong></a> = __get_arguments(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-_RFC_FUNC__get_results"><strong>_RFC_FUNC__get_results</strong></a> = __get_results(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-_RFC_FUNC__set_arguments"><strong>_RFC_FUNC__set_arguments</strong></a> = __set_arguments(self, args)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-_RFC_FUNC__set_results"><strong>_RFC_FUNC__set_results</strong></a> = __set_results(self, results)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-__call__"><strong>__call__</strong></a>(self, *args, **kyw)</dt><dd><tt>Executes&nbsp;the&nbsp;remote&nbsp;function&nbsp;call&nbsp;in&nbsp;the&nbsp;SAP&nbsp;system&nbsp;passing&nbsp;all&nbsp;active&nbsp;arguments&nbsp;or&nbsp;if&nbsp;args&nbsp;is&nbsp;non-zero&nbsp;only<br>
+those&nbsp;arguments&nbsp;listed&nbsp;in&nbsp;args.<br>
+It&nbsp;raises&nbsp;<a href="#SapRfcError">SapRfcError</a>&nbsp;on&nbsp;exceptions.</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__getitem__"><strong>__getitem__</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-__init__"><strong>__init__</strong></a>(self, hnd, func_name, args, desc<font color="#909090">=''</font>)</dt><dd><tt>Do&nbsp;not&nbsp;instantiate&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>&nbsp;directly.&nbsp;Use&nbsp;the&nbsp;get_interface&nbsp;method&nbsp;of&nbsp;<a href="#Rfc_connection">Rfc_connection</a>&nbsp;to&nbsp;get&nbsp;its&nbsp;interface<br>
+from&nbsp;SAP&nbsp;system.</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__setitem__"><strong>__setitem__</strong></a>(self, ky, v)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-__setstate__"><strong>__setstate__</strong></a>(self, dict)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-args"><strong>args</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-exports"><strong>exports</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-field"><strong>field</strong></a>(self, ky)</dt><dd><tt>Access&nbsp;argument&nbsp;ky.</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-imports"><strong>imports</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-initialize"><strong>initialize</strong></a>(self)</dt><dd><tt>Initializes&nbsp;the&nbsp;arguments&nbsp;(sets&nbsp;them&nbsp;to&nbsp;initial&nbsp;values&nbsp;and&nbsp;then&nbsp;activates&nbsp;them).</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-items"><strong>items</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-keys"><strong>keys</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-raw_value"><strong>raw_value</strong></a>(self, ky)</dt><dd><tt>Get&nbsp;raw&nbsp;value&nbsp;of&nbsp;argument&nbsp;ky.</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-reconnect"><strong>reconnect</strong></a>(self, handle)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Sets&nbsp;all&nbsp;arguments&nbsp;to&nbsp;their&nbsp;initial&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-set_active"><strong>set_active</strong></a>(self, ky, active<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-set_all_active"><strong>set_all_active</strong></a>(self, active<font color="#909090">=1</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;status&nbsp;of&nbsp;all&nbsp;arguments&nbsp;to&nbsp;value&nbsp;of&nbsp;active&nbsp;(0&nbsp;-&nbsp;inactive,&nbsp;1&nbsp;-&nbsp;active).</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-tables"><strong>tables</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_FUNC-values"><strong>values</strong></a>(self)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>func_args</strong></dt>
+<dd><dl><dt><a name="RFC_FUNC-func_args getter"><strong>func_args getter</strong></a> = __get_arguments(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="RFC_FUNC-func_args setter"><strong>func_args setter</strong></a> = __set_arguments(self, args)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>func_res</strong></dt>
+<dd><dl><dt><a name="RFC_FUNC-func_res getter"><strong>func_res getter</strong></a> = __get_results(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="RFC_FUNC-func_res setter"><strong>func_res setter</strong></a> = __set_results(self, results)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = "<font color="#c040c0">\n</font>This class stores the function module interface...e class. (func.kunnr.ext_value or func['kunnr'])<font color="#c040c0">\n</font>"</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_FUNC' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_FUNC-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_FUNC-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_FUNC-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#RFC_FUNC-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_PARAM">class <strong>RFC_PARAM</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;stores&nbsp;information&nbsp;about&nbsp;single&nbsp;parameter&nbsp;of&nbsp;the&nbsp;RFC&nbsp;function&nbsp;module&nbsp;-&nbsp;its&nbsp;name,&nbsp;sap&nbsp;type,<br>
+parameter&nbsp;type&nbsp;(simple,&nbsp;structure,&nbsp;or&nbsp;table),&nbsp;length&nbsp;and&nbsp;so&nbsp;on.&nbsp;It's&nbsp;meant&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;a&nbsp;part&nbsp;of&nbsp;function<br>
+module&nbsp;interface.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RFC_PARAM-_RFC_PARAM__as_arg"><strong>_RFC_PARAM__as_arg</strong></a> = __as_arg(self)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-_RFC_PARAM__get_raw"><strong>_RFC_PARAM__get_raw</strong></a> = __get_raw(self)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-_RFC_PARAM__get_value"><strong>_RFC_PARAM__get_value</strong></a> = __get_value(self)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-_RFC_PARAM__set_value"><strong>_RFC_PARAM__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-__init__"><strong>__init__</strong></a>(self, param_name, param_typ, param_exid, param_length, data_type, param, active<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-__setstate__"><strong>__setstate__</strong></a>(self, dict)</dt></dl>
+
+<dl><dt><a name="RFC_PARAM-reset"><strong>reset</strong></a>(self)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>as_arg</strong></dt>
+<dd><dl><dt><a name="RFC_PARAM-as_arg getter"><strong>as_arg getter</strong></a> = __as_arg(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>raw</strong></dt>
+<dd><dl><dt><a name="RFC_PARAM-raw getter"><strong>raw getter</strong></a> = __get_raw(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><dl><dt><a name="RFC_PARAM-value getter"><strong>value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="RFC_PARAM-value setter"><strong>value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>This class stores information about single para... be used as a part of function<font color="#c040c0">\n</font>module interface.<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_PARAM' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_PARAM-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#RFC_PARAM-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_PARAMETER_ADMIN">class <strong>RFC_PARAMETER_ADMIN</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#RFC_PARAMETER_ADMIN">RFC_PARAMETER_ADMIN</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>Exports</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>Imports</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>Tables</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_PARAMETER_ADMIN' objects&gt;</dl>
+
+<dl><dt><strong>_fields_</strong> = [('Exports', &lt;class 'pysap.RFC_PARAM_STACK'&gt;), ('Imports', &lt;class 'pysap.RFC_PARAM_STACK'&gt;), ('Tables', &lt;class 'pysap.RFC_PARAM_STACK'&gt;)]</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.StructType object&gt;<dd><tt>T.<a href="#RFC_PARAMETER_ADMIN-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAMETER_ADMIN-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAMETER_ADMIN-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.StructType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_PARAM_STACK">class <strong>RFC_PARAM_STACK</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#RFC_PARAM_STACK">RFC_PARAM_STACK</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>MaxNo</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>Params</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_PARAM_STACK' objects&gt;</dl>
+
+<dl><dt><strong>_fields_</strong> = [('MaxNo', &lt;class 'ctypes.c_int'&gt;), ('Params', &lt;class 'ctypes.c_void_p'&gt;)]</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="RFC_PARAM_STACK-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.StructType object&gt;<dd><tt>T.<a href="#RFC_PARAM_STACK-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="RFC_PARAM_STACK-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_PARAM_STACK-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM_STACK-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM_STACK-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM_STACK-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM_STACK-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_PARAM_STACK-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_PARAM_STACK-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.StructType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_SERV_FUNC">class <strong>RFC_SERV_FUNC</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Subclass&nbsp;this&nbsp;class&nbsp;to&nbsp;implement&nbsp;server-side&nbsp;remote&nbsp;function&nbsp;(function&nbsp;that&nbsp;gets&nbsp;called&nbsp;from&nbsp;SAP&nbsp;system).<br>
+To&nbsp;implement&nbsp;function&nbsp;you&nbsp;have&nbsp;to:<br>
+1.&nbsp;set&nbsp;the&nbsp;_name_&nbsp;attribute&nbsp;to&nbsp;function&nbsp;name<br>
+2.&nbsp;define&nbsp;at&nbsp;least&nbsp;one&nbsp;of&nbsp;_importing_,&nbsp;_exporting_,&nbsp;or&nbsp;_tables_&nbsp;attributes<br>
+3.&nbsp;override&nbsp;the&nbsp;run&nbsp;method<br>
+4.&nbsp;optionally&nbsp;override&nbsp;the&nbsp;init_data&nbsp;method&nbsp;to&nbsp;initialize&nbsp;data<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RFC_SERV_FUNC-_RFC_SERV_FUNC__add_parameter"><strong>_RFC_SERV_FUNC__add_parameter</strong></a> = __add_parameter(self, data_def, param_typ)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_RFC_SERV_FUNC__add_table"><strong>_RFC_SERV_FUNC__add_table</strong></a> = __add_table(self, data_def)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_RFC_SERV_FUNC__get_cfunc"><strong>_RFC_SERV_FUNC__get_cfunc</strong></a> = __get_cfunc(self)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_RFC_SERV_FUNC__get_func"><strong>_RFC_SERV_FUNC__get_func</strong></a> = __get_func(self)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_RFC_SERV_FUNC__split_def"><strong>_RFC_SERV_FUNC__split_def</strong></a> = __split_def(self, data_def)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__getitem__"><strong>__getitem__</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__init__"><strong>__init__</strong></a>(self, rel4<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__setitem__"><strong>__setitem__</strong></a>(self, ky, v)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_declare_data"><strong>_declare_data</strong></a>(self, handle)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_get_data"><strong>_get_data</strong></a>(self, handle)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-_set_data"><strong>_set_data</strong></a>(self, handle)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-init_data"><strong>init_data</strong></a>(self, handle)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-num_params"><strong>num_params</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-run"><strong>run</strong></a>(self, handle)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>cf</strong></dt>
+<dd><dl><dt><a name="RFC_SERV_FUNC-cf getter"><strong>cf getter</strong></a> = __get_cfunc(self)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>f</strong></dt>
+<dd><dl><dt><a name="RFC_SERV_FUNC-f getter"><strong>f getter</strong></a> = __get_func(self)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Subclass this class to implement server-side re...override the init_data method to initialize data<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_SERV_FUNC' objects&gt;</dl>
+
+<dl><dt><strong>_doc_</strong> = ''</dl>
+
+<dl><dt><strong>_name_</strong> = ''</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_SERV_FUNC-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_SERV_FUNC-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_SERV_FUNC-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#RFC_SERV_FUNC-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RFC_TYPE_ELEMENT">class <strong>RFC_TYPE_ELEMENT</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#RFC_TYPE_ELEMENT">RFC_TYPE_ELEMENT</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'RFC_TYPE_ELEMENT' objects&gt;</dl>
+
+<dl><dt><strong>_fields_</strong> = [('name', &lt;class 'ctypes.c_char_p'&gt;), ('type', &lt;class 'ctypes.c_uint'&gt;), ('length', &lt;class 'ctypes.c_uint'&gt;), ('decimals', &lt;class 'ctypes.c_uint'&gt;), ('_not_used', &lt;class 'ctypes.c_uint'&gt;)]</dl>
+
+<dl><dt><strong>_not_used</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>decimals</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>length</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>name</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<dl><dt><strong>type</strong> = &lt;_ctypes.CField object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="RFC_TYPE_ELEMENT-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.StructType object&gt;<dd><tt>T.<a href="#RFC_TYPE_ELEMENT-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="RFC_TYPE_ELEMENT-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="RFC_TYPE_ELEMENT-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_TYPE_ELEMENT-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="RFC_TYPE_ELEMENT-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="RFC_TYPE_ELEMENT-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="RFC_TYPE_ELEMENT-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RFC_TYPE_ELEMENT-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#RFC_TYPE_ELEMENT-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.StructType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>RfcServer</strong> = <a name="RfcServer">class RfcServerEx</a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Alternative&nbsp;SAP&nbsp;RFC&nbsp;server&nbsp;implementation&nbsp;-&nbsp;uses&nbsp;RfcGetName&nbsp;instead&nbsp;of&nbsp;RfcInstallFunction.<br>
+To&nbsp;implement&nbsp;RFC&nbsp;server:<br>
+1.&nbsp;subclass&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;to&nbsp;define&nbsp;function(s)&nbsp;to&nbsp;be&nbsp;exported<br>
+2.&nbsp;call&nbsp;the&nbsp;register_func&nbsp;method&nbsp;to&nbsp;register&nbsp;function&nbsp;with&nbsp;the&nbsp;server<br>
+3.&nbsp;call&nbsp;the&nbsp;main_loop&nbsp;passing&nbsp;it&nbsp;sys.argv&nbsp;to&nbsp;start&nbsp;the&nbsp;server<br>
+In&nbsp;SAP&nbsp;system&nbsp;use&nbsp;the&nbsp;SM59&nbsp;transaction&nbsp;to&nbsp;define&nbsp;remote&nbsp;destination&nbsp;(TCP/IP)&nbsp;and&nbsp;register&nbsp;your&nbsp;program<br>
+with&nbsp;SAP.<br>
+Note:&nbsp;The&nbsp;length&nbsp;of&nbsp;function&nbsp;name&nbsp;is&nbsp;limited&nbsp;to&nbsp;30&nbsp;chars&nbsp;(RfcGetName&nbsp;limitation).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RfcServerEx-__init__"><strong>__init__</strong></a>(self, rel4<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="RfcServerEx-main_loop"><strong>main_loop</strong></a>(self, argv)</dt><dd><tt>Pass&nbsp;sys.argv&nbsp;as&nbsp;argument&nbsp;to&nbsp;this&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="RfcServerEx-register_func"><strong>register_func</strong></a>(self, func_obj)</dt><dd><tt>Registers&nbsp;function&nbsp;produced&nbsp;by&nbsp;subclassing&nbsp;the&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;with&nbsp;the&nbsp;server.&nbsp;Pass&nbsp;it&nbsp;a&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;subclass<br>
+(class&nbsp;itself&nbsp;not&nbsp;the&nbsp;instance&nbsp;thereof)&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Alternative SAP RFC server implementation - use... is limited to 30 chars (RfcGetName limitation).<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RfcServerEx">class <strong>RfcServerEx</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Alternative&nbsp;SAP&nbsp;RFC&nbsp;server&nbsp;implementation&nbsp;-&nbsp;uses&nbsp;RfcGetName&nbsp;instead&nbsp;of&nbsp;RfcInstallFunction.<br>
+To&nbsp;implement&nbsp;RFC&nbsp;server:<br>
+1.&nbsp;subclass&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;to&nbsp;define&nbsp;function(s)&nbsp;to&nbsp;be&nbsp;exported<br>
+2.&nbsp;call&nbsp;the&nbsp;register_func&nbsp;method&nbsp;to&nbsp;register&nbsp;function&nbsp;with&nbsp;the&nbsp;server<br>
+3.&nbsp;call&nbsp;the&nbsp;main_loop&nbsp;passing&nbsp;it&nbsp;sys.argv&nbsp;to&nbsp;start&nbsp;the&nbsp;server<br>
+In&nbsp;SAP&nbsp;system&nbsp;use&nbsp;the&nbsp;SM59&nbsp;transaction&nbsp;to&nbsp;define&nbsp;remote&nbsp;destination&nbsp;(TCP/IP)&nbsp;and&nbsp;register&nbsp;your&nbsp;program<br>
+with&nbsp;SAP.<br>
+Note:&nbsp;The&nbsp;length&nbsp;of&nbsp;function&nbsp;name&nbsp;is&nbsp;limited&nbsp;to&nbsp;30&nbsp;chars&nbsp;(RfcGetName&nbsp;limitation).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RfcServerEx-__init__"><strong>__init__</strong></a>(self, rel4<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="RfcServerEx-main_loop"><strong>main_loop</strong></a>(self, argv)</dt><dd><tt>Pass&nbsp;sys.argv&nbsp;as&nbsp;argument&nbsp;to&nbsp;this&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="RfcServerEx-register_func"><strong>register_func</strong></a>(self, func_obj)</dt><dd><tt>Registers&nbsp;function&nbsp;produced&nbsp;by&nbsp;subclassing&nbsp;the&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;with&nbsp;the&nbsp;server.&nbsp;Pass&nbsp;it&nbsp;a&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;subclass<br>
+(class&nbsp;itself&nbsp;not&nbsp;the&nbsp;instance&nbsp;thereof)&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Alternative SAP RFC server implementation - use... is limited to 30 chars (RfcGetName limitation).<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Rfc_connection">class <strong>Rfc_connection</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;connects&nbsp;to&nbsp;SAP&nbsp;system&nbsp;and&nbsp;keeps&nbsp;connection&nbsp;information.&nbsp;It&nbsp;provides&nbsp;methods&nbsp;to&nbsp;retrieve&nbsp;data<br>
+and&nbsp;structure&nbsp;descriptions&nbsp;from&nbsp;SAP&nbsp;system.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Rfc_connection-_Rfc_connection__get_handle"><strong>_Rfc_connection__get_handle</strong></a> = __get_handle(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection-_Rfc_connection__read_config"><strong>_Rfc_connection__read_config</strong></a> = __read_config(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection-_Rfc_connection__set_release"><strong>_Rfc_connection__set_release</strong></a> = __set_release(self, rel4)</dt></dl>
+
+<dl><dt><a name="Rfc_connection-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection-__init__"><strong>__init__</strong></a>(self, conn_string<font color="#909090">=''</font>, conn_file<font color="#909090">=''</font>, conn_name<font color="#909090">=''</font>, rel4<font color="#909090">=1</font>)</dt><dd><tt>See&nbsp;SAP&nbsp;documentation&nbsp;for&nbsp;information&nbsp;on&nbsp;the&nbsp;structure&nbsp;of&nbsp;connection&nbsp;string.<br>
+Some&nbsp;examples:<br>
+ASHOST=mysystem&nbsp;SYSNR=10&nbsp;CLIENT=100&nbsp;USER=hans&nbsp;PASSWD=geheim<br>
+ASHOST=/H/mysaprouter/H/theirsaprouter/H/theirsystem&nbsp;SYSNR=10&nbsp;CLIENT=100&nbsp;USER=hans&nbsp;PASSWD=geheim&nbsp;(if&nbsp;you&nbsp;need<br>
+sap&nbsp;router&nbsp;to&nbsp;connect&nbsp;to&nbsp;the&nbsp;SAP&nbsp;R/3)<br>
+You&nbsp;can&nbsp;also&nbsp;use&nbsp;an&nbsp;.ini&nbsp;file&nbsp;to&nbsp;store&nbsp;connection&nbsp;information&nbsp;for&nbsp;better<br>
+security.&nbsp;In&nbsp;that&nbsp;case&nbsp;set&nbsp;the&nbsp;conn_file&nbsp;to&nbsp;location&nbsp;of&nbsp;the&nbsp;.ini&nbsp;file&nbsp;and&nbsp;conn_name&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;connection<br>
+(if&nbsp;your&nbsp;.ini&nbsp;file&nbsp;supports&nbsp;several&nbsp;connections).&nbsp;If&nbsp;conn_name&nbsp;is&nbsp;not&nbsp;set,&nbsp;first&nbsp;connection&nbsp;found&nbsp;is&nbsp;used&nbsp;(this&nbsp;is<br>
+not&nbsp;neccesarally&nbsp;the&nbsp;first&nbsp;connection&nbsp;specied&nbsp;in&nbsp;the&nbsp;.ini&nbsp;file).<br>
+Note:&nbsp;conn_string&nbsp;and&nbsp;conn_file&nbsp;are&nbsp;muttally&nbsp;exclusive.&nbsp;If&nbsp;both&nbsp;are&nbsp;given,&nbsp;conn_string&nbsp;takes&nbsp;precedence&nbsp;and&nbsp;conn_file<br>
+is&nbsp;ignored.<br>
+rel4:&nbsp;1&nbsp;-&nbsp;the&nbsp;remote&nbsp;system&nbsp;is&nbsp;R/3&nbsp;v4&nbsp;or&nbsp;higher,&nbsp;0&nbsp;-&nbsp;remote&nbsp;system&nbsp;is&nbsp;R/3&nbsp;v3.1,&nbsp;default&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-close"><strong>close</strong></a>(self)</dt><dd><tt>Closes&nbsp;connection.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-exec_abap"><strong>exec_abap</strong></a>(self, prog_lines, mode<font color="#909090">='F'</font>, program_name<font color="#909090">='&lt;&lt;RFC1&gt;&gt;'</font>)</dt><dd><tt>Execute&nbsp;abap&nbsp;program&nbsp;defined&nbsp;in&nbsp;prog_lines&nbsp;and&nbsp;return&nbsp;its&nbsp;writes&nbsp;as&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance.<br>
+Raises&nbsp;<a href="#SapRfcError">SapRfcError</a>&nbsp;on&nbsp;errors.<br>
+prog_lines&nbsp;can&nbsp;be&nbsp;string&nbsp;or&nbsp;list&nbsp;of&nbsp;lines.<br>
+Uses&nbsp;RFC_ABAP_INSTALL_AND_RUN.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-exec_abap_file"><strong>exec_abap_file</strong></a>(self, f, mode<font color="#909090">='F'</font>, program_name<font color="#909090">='&lt;&lt;RFC1&gt;&gt;'</font>)</dt><dd><tt>Executes&nbsp;abap&nbsp;program&nbsp;from&nbsp;file&nbsp;f.&nbsp;f&nbsp;can&nbsp;be&nbsp;string&nbsp;or&nbsp;file&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+See&nbsp;also&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.exec_abap</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_fielddict"><strong>get_fielddict</strong></a>(self, s_name, *flds)</dt><dd><tt>Similar&nbsp;to&nbsp;get_fieldlist&nbsp;but&nbsp;returns&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;field_name,field_definition&nbsp;pairs&nbsp;instead&nbsp;of&nbsp;a&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_fieldlist"><strong>get_fieldlist</strong></a>(self, s_name, *flds)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;definitions&nbsp;suitable&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;create_struct&nbsp;function.<br>
+s_name&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;structure&nbsp;or&nbsp;permanent&nbsp;table&nbsp;in&nbsp;DDIC.<br>
+flds&nbsp;-&nbsp;if&nbsp;non-zero&nbsp;include&nbsp;only&nbsp;fields&nbsp;listed&nbsp;in&nbsp;flds</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_interface"><strong>get_interface</strong></a>(self, f_name, include_desc<font color="#909090">=1</font>, func_args<font color="#909090">=None</font>, func_res<font color="#909090">=None</font>)</dt><dd><tt>Get&nbsp;the&nbsp;function&nbsp;module&nbsp;interface&nbsp;form&nbsp;the&nbsp;system.&nbsp;Returns&nbsp;a&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>&nbsp;instance&nbsp;or&nbsp;raises&nbsp;<a href="#SapRfcError">SapRfcError</a>.<br>
+f_name&nbsp;-&nbsp;function&nbsp;module&nbsp;name&nbsp;as&nbsp;specified&nbsp;by&nbsp;SAP<br>
+include_desc&nbsp;-&nbsp;include&nbsp;the&nbsp;description&nbsp;of&nbsp;the&nbsp;function&nbsp;interface&nbsp;(see&nbsp;fields&nbsp;desc&nbsp;and&nbsp;desc_obj&nbsp;of&nbsp;resulting&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>&nbsp;instance)<br>
+&nbsp;(see&nbsp;also&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.get_interface_desc).<br>
+You&nbsp;can&nbsp;set&nbsp;this&nbsp;to&nbsp;False&nbsp;if&nbsp;you&nbsp;don't&nbsp;need&nbsp;description&nbsp;of&nbsp;the&nbsp;interface&nbsp;for&nbsp;small&nbsp;perfomance&nbsp;boost&nbsp;(untested).</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_interface_desc"><strong>get_interface_desc</strong></a>(self, funcname, lang<font color="#909090">=None</font>, stext<font color="#909090">=''</font>)</dt><dd><tt>Unlike&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.get_interface&nbsp;this&nbsp;method&nbsp;fetches&nbsp;interface&nbsp;description&nbsp;only&nbsp;and&nbsp;stores&nbsp;it&nbsp;in<br>
+a&nbsp;description&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(FuncDesc).<br>
+Usefull&nbsp;for&nbsp;documentation&nbsp;purposes.<br>
+funcname&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;function,<br>
+lang&nbsp;-&nbsp;language,<br>
+stext&nbsp;-&nbsp;short&nbsp;text&nbsp;describing&nbsp;the&nbsp;function<br>
+returns&nbsp;description&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(an&nbsp;instance&nbsp;of&nbsp;class&nbsp;FuncDesc)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_structure"><strong>get_structure</strong></a>(self, s_name, *flds)</dt><dd><tt>Similar&nbsp;ot&nbsp;get_fieldlist,&nbsp;this&nbsp;one&nbsp;returns&nbsp;an&nbsp;instance&nbsp;of&nbsp;STRUCT&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(see&nbsp;source&nbsp;of&nbsp;create_structure).</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-get_table"><strong>get_table</strong></a>(self, t_name, inttab_name<font color="#909090">=''</font>)</dt><dd><tt>Creates&nbsp;an&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance&nbsp;using&nbsp;structure&nbsp;data&nbsp;from&nbsp;DDIC.<br>
+tname&nbsp;-&nbsp;table&nbsp;name&nbsp;from&nbsp;DDIC<br>
+inttab_name&nbsp;-&nbsp;internal&nbsp;table&nbsp;name,&nbsp;see&nbsp;<a href="#ItTable">ItTable</a></tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-make_py_func"><strong>make_py_func</strong></a>(self, funcname, include_doc<font color="#909090">=0</font>, func_args<font color="#909090">=None</font>, func_res<font color="#909090">=None</font>, convert_res<font color="#909090">=0</font>)</dt></dl>
+
+<dl><dt><a name="Rfc_connection-open"><strong>open</strong></a>(self, conn_string<font color="#909090">=''</font>, conn_file<font color="#909090">=''</font>, conn_name<font color="#909090">=''</font>, rel4<font color="#909090">=None</font>)</dt><dd><tt>Connects&nbsp;to&nbsp;the&nbsp;SAP&nbsp;system.&nbsp;Raises&nbsp;<a href="#SapRfcError">SapRfcError</a>&nbsp;on&nbsp;connection&nbsp;errors.&nbsp;If&nbsp;given&nbsp;conn_string&nbsp;overrides&nbsp;connection<br>
+string&nbsp;specified&nbsp;in&nbsp;the&nbsp;__init__.&nbsp;You&nbsp;can&nbsp;also&nbsp;use&nbsp;an&nbsp;.ini&nbsp;file&nbsp;to&nbsp;store&nbsp;connection&nbsp;information&nbsp;for&nbsp;better<br>
+security.&nbsp;In&nbsp;that&nbsp;case&nbsp;set&nbsp;the&nbsp;conn_file&nbsp;to&nbsp;location&nbsp;of&nbsp;the&nbsp;.ini&nbsp;file&nbsp;and&nbsp;conn_name&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;connection<br>
+(if&nbsp;your&nbsp;.ini&nbsp;file&nbsp;supports&nbsp;several&nbsp;connections).&nbsp;If&nbsp;conn_name&nbsp;is&nbsp;not&nbsp;set,&nbsp;first&nbsp;connection&nbsp;found&nbsp;is&nbsp;used&nbsp;(this&nbsp;is<br>
+not&nbsp;neccesarally&nbsp;the&nbsp;first&nbsp;connection&nbsp;specied&nbsp;in&nbsp;the&nbsp;.ini&nbsp;file).<br>
+Note:&nbsp;conn_string&nbsp;and&nbsp;conn_file&nbsp;are&nbsp;muttally&nbsp;exclusive.&nbsp;If&nbsp;both&nbsp;are&nbsp;given,&nbsp;conn_string&nbsp;takes&nbsp;precedence&nbsp;and&nbsp;conn_file<br>
+is&nbsp;ignored.<br>
+rel4:&nbsp;1&nbsp;-&nbsp;the&nbsp;remote&nbsp;system&nbsp;is&nbsp;R/3&nbsp;v4&nbsp;or&nbsp;higher,&nbsp;0&nbsp;-&nbsp;remote&nbsp;system&nbsp;is&nbsp;R/3&nbsp;v3.1,&nbsp;default&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-read_table"><strong>read_table</strong></a>(self, t_name, options<font color="#909090">=[]</font>, fields<font color="#909090">=[]</font>, max_rows<font color="#909090">=0</font>, from_row<font color="#909090">=0</font>)</dt><dd><tt>Reads&nbsp;data&nbsp;from&nbsp;SAP&nbsp;transparent&nbsp;tables&nbsp;using&nbsp;RFC_READ_TABLE.&nbsp;Use&nbsp;the&nbsp;source&nbsp;of&nbsp;this&nbsp;method&nbsp;as&nbsp;an&nbsp;example<br>
+of&nbsp;how&nbsp;to&nbsp;create&nbsp;and&nbsp;use&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>.<br>
+Method&nbsp;returns&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance.<br>
+t_name&nbsp;-&nbsp;table&nbsp;name&nbsp;(defined&nbsp;in&nbsp;DDIC)<br>
+options&nbsp;-&nbsp;parts&nbsp;of&nbsp;WHERE&nbsp;clause,&nbsp;length&nbsp;of&nbsp;single&nbsp;item&nbsp;must&nbsp;be&nbsp;equal&nbsp;or&nbsp;less&nbsp;than&nbsp;72<br>
+fields&nbsp;-&nbsp;list&nbsp;of&nbsp;fields<br>
+max_rows&nbsp;-&nbsp;max&nbsp;number&nbsp;of&nbsp;rows&nbsp;returned<br>
+from_row&nbsp;-&nbsp;row&nbsp;to&nbsp;start&nbsp;with</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-search_functions"><strong>search_functions</strong></a>(self, funcname, grpname<font color="#909090">=''</font>, lang<font color="#909090">=None</font>, names_only<font color="#909090">=0</font>)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>handle</strong></dt>
+<dd><dl><dt><a name="Rfc_connection-handle getter"><strong>handle getter</strong></a> = __get_handle(self)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>RFC_FIELDS_P</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_FIELDS_P31</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_FIELDS_P40</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P31</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P40</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>This class connects to SAP system and keeps con...data<font color="#c040c0">\n</font>and structure descriptions from SAP system.<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'Rfc_connection' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="Rfc_connection-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Rfc_connection-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Rfc_connection_serv">class <strong>Rfc_connection_serv</strong></a>(<a href="pysap.html#Rfc_connection">Rfc_connection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Subclass&nbsp;of&nbsp;<a href="#Rfc_connection">Rfc_connection</a>&nbsp;to&nbsp;be&nbsp;used&nbsp;by&nbsp;<a href="#RFC_SERV_FUNC">RFC_SERV_FUNC</a>&nbsp;for&nbsp;calling&nbsp;RFC&nbsp;functions&nbsp;from<br>
+SAP.&nbsp;Do&nbsp;not&nbsp;instantiate&nbsp;this&nbsp;class&nbsp;directly.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#Rfc_connection_serv">Rfc_connection_serv</a></dd>
+<dd><a href="pysap.html#Rfc_connection">Rfc_connection</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Rfc_connection_serv-_Rfc_connection_serv__get_handle"><strong>_Rfc_connection_serv__get_handle</strong></a> = __get_handle(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-_Rfc_connection_serv__set_release"><strong>_Rfc_connection_serv__set_release</strong></a> = __set_release(self, rel4)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__init__"><strong>__init__</strong></a>(self, handle, rel4<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-close"><strong>close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-open"><strong>open</strong></a>(self)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>handle</strong></dt>
+<dd><dl><dt><a name="Rfc_connection_serv-handle getter"><strong>handle getter</strong></a> = __get_handle(self)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = '<font color="#c040c0">\n</font>Subclass of Rfc_connection to be used by RFC_SE...from<font color="#c040c0">\n</font>SAP. Do not instantiate this class directly.'</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="pysap.html#Rfc_connection">Rfc_connection</a>:<br>
+<dl><dt><a name="Rfc_connection_serv-_Rfc_connection__get_handle"><strong>_Rfc_connection__get_handle</strong></a> = __get_handle(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-_Rfc_connection__read_config"><strong>_Rfc_connection__read_config</strong></a> = __read_config(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-_Rfc_connection__set_release"><strong>_Rfc_connection__set_release</strong></a> = __set_release(self, rel4)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-exec_abap"><strong>exec_abap</strong></a>(self, prog_lines, mode<font color="#909090">='F'</font>, program_name<font color="#909090">='&lt;&lt;RFC1&gt;&gt;'</font>)</dt><dd><tt>Execute&nbsp;abap&nbsp;program&nbsp;defined&nbsp;in&nbsp;prog_lines&nbsp;and&nbsp;return&nbsp;its&nbsp;writes&nbsp;as&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance.<br>
+Raises&nbsp;<a href="#SapRfcError">SapRfcError</a>&nbsp;on&nbsp;errors.<br>
+prog_lines&nbsp;can&nbsp;be&nbsp;string&nbsp;or&nbsp;list&nbsp;of&nbsp;lines.<br>
+Uses&nbsp;RFC_ABAP_INSTALL_AND_RUN.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-exec_abap_file"><strong>exec_abap_file</strong></a>(self, f, mode<font color="#909090">='F'</font>, program_name<font color="#909090">='&lt;&lt;RFC1&gt;&gt;'</font>)</dt><dd><tt>Executes&nbsp;abap&nbsp;program&nbsp;from&nbsp;file&nbsp;f.&nbsp;f&nbsp;can&nbsp;be&nbsp;string&nbsp;or&nbsp;file&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+See&nbsp;also&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.exec_abap</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_fielddict"><strong>get_fielddict</strong></a>(self, s_name, *flds)</dt><dd><tt>Similar&nbsp;to&nbsp;get_fieldlist&nbsp;but&nbsp;returns&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;field_name,field_definition&nbsp;pairs&nbsp;instead&nbsp;of&nbsp;a&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_fieldlist"><strong>get_fieldlist</strong></a>(self, s_name, *flds)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;definitions&nbsp;suitable&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;create_struct&nbsp;function.<br>
+s_name&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;structure&nbsp;or&nbsp;permanent&nbsp;table&nbsp;in&nbsp;DDIC.<br>
+flds&nbsp;-&nbsp;if&nbsp;non-zero&nbsp;include&nbsp;only&nbsp;fields&nbsp;listed&nbsp;in&nbsp;flds</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_interface"><strong>get_interface</strong></a>(self, f_name, include_desc<font color="#909090">=1</font>, func_args<font color="#909090">=None</font>, func_res<font color="#909090">=None</font>)</dt><dd><tt>Get&nbsp;the&nbsp;function&nbsp;module&nbsp;interface&nbsp;form&nbsp;the&nbsp;system.&nbsp;Returns&nbsp;a&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>&nbsp;instance&nbsp;or&nbsp;raises&nbsp;<a href="#SapRfcError">SapRfcError</a>.<br>
+f_name&nbsp;-&nbsp;function&nbsp;module&nbsp;name&nbsp;as&nbsp;specified&nbsp;by&nbsp;SAP<br>
+include_desc&nbsp;-&nbsp;include&nbsp;the&nbsp;description&nbsp;of&nbsp;the&nbsp;function&nbsp;interface&nbsp;(see&nbsp;fields&nbsp;desc&nbsp;and&nbsp;desc_obj&nbsp;of&nbsp;resulting&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>&nbsp;instance)<br>
+&nbsp;(see&nbsp;also&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.get_interface_desc).<br>
+You&nbsp;can&nbsp;set&nbsp;this&nbsp;to&nbsp;False&nbsp;if&nbsp;you&nbsp;don't&nbsp;need&nbsp;description&nbsp;of&nbsp;the&nbsp;interface&nbsp;for&nbsp;small&nbsp;perfomance&nbsp;boost&nbsp;(untested).</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_interface_desc"><strong>get_interface_desc</strong></a>(self, funcname, lang<font color="#909090">=None</font>, stext<font color="#909090">=''</font>)</dt><dd><tt>Unlike&nbsp;<a href="#Rfc_connection">Rfc_connection</a>.get_interface&nbsp;this&nbsp;method&nbsp;fetches&nbsp;interface&nbsp;description&nbsp;only&nbsp;and&nbsp;stores&nbsp;it&nbsp;in<br>
+a&nbsp;description&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(FuncDesc).<br>
+Usefull&nbsp;for&nbsp;documentation&nbsp;purposes.<br>
+funcname&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;function,<br>
+lang&nbsp;-&nbsp;language,<br>
+stext&nbsp;-&nbsp;short&nbsp;text&nbsp;describing&nbsp;the&nbsp;function<br>
+returns&nbsp;description&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(an&nbsp;instance&nbsp;of&nbsp;class&nbsp;FuncDesc)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_structure"><strong>get_structure</strong></a>(self, s_name, *flds)</dt><dd><tt>Similar&nbsp;ot&nbsp;get_fieldlist,&nbsp;this&nbsp;one&nbsp;returns&nbsp;an&nbsp;instance&nbsp;of&nbsp;STRUCT&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;(see&nbsp;source&nbsp;of&nbsp;create_structure).</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-get_table"><strong>get_table</strong></a>(self, t_name, inttab_name<font color="#909090">=''</font>)</dt><dd><tt>Creates&nbsp;an&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance&nbsp;using&nbsp;structure&nbsp;data&nbsp;from&nbsp;DDIC.<br>
+tname&nbsp;-&nbsp;table&nbsp;name&nbsp;from&nbsp;DDIC<br>
+inttab_name&nbsp;-&nbsp;internal&nbsp;table&nbsp;name,&nbsp;see&nbsp;<a href="#ItTable">ItTable</a></tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-make_py_func"><strong>make_py_func</strong></a>(self, funcname, include_doc<font color="#909090">=0</font>, func_args<font color="#909090">=None</font>, func_res<font color="#909090">=None</font>, convert_res<font color="#909090">=0</font>)</dt></dl>
+
+<dl><dt><a name="Rfc_connection_serv-read_table"><strong>read_table</strong></a>(self, t_name, options<font color="#909090">=[]</font>, fields<font color="#909090">=[]</font>, max_rows<font color="#909090">=0</font>, from_row<font color="#909090">=0</font>)</dt><dd><tt>Reads&nbsp;data&nbsp;from&nbsp;SAP&nbsp;transparent&nbsp;tables&nbsp;using&nbsp;RFC_READ_TABLE.&nbsp;Use&nbsp;the&nbsp;source&nbsp;of&nbsp;this&nbsp;method&nbsp;as&nbsp;an&nbsp;example<br>
+of&nbsp;how&nbsp;to&nbsp;create&nbsp;and&nbsp;use&nbsp;<a href="#RFC_FUNC">RFC_FUNC</a>.<br>
+Method&nbsp;returns&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instance.<br>
+t_name&nbsp;-&nbsp;table&nbsp;name&nbsp;(defined&nbsp;in&nbsp;DDIC)<br>
+options&nbsp;-&nbsp;parts&nbsp;of&nbsp;WHERE&nbsp;clause,&nbsp;length&nbsp;of&nbsp;single&nbsp;item&nbsp;must&nbsp;be&nbsp;equal&nbsp;or&nbsp;less&nbsp;than&nbsp;72<br>
+fields&nbsp;-&nbsp;list&nbsp;of&nbsp;fields<br>
+max_rows&nbsp;-&nbsp;max&nbsp;number&nbsp;of&nbsp;rows&nbsp;returned<br>
+from_row&nbsp;-&nbsp;row&nbsp;to&nbsp;start&nbsp;with</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-search_functions"><strong>search_functions</strong></a>(self, funcname, grpname<font color="#909090">=''</font>, lang<font color="#909090">=None</font>, names_only<font color="#909090">=0</font>)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="pysap.html#Rfc_connection">Rfc_connection</a>:<br>
+<dl><dt><strong>RFC_FIELDS_P</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_FIELDS_P31</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_FIELDS_P40</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P31</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>RFC_PARAMS_P40</strong> = &lt;class 'pysap.STRUCT'&gt;</dl>
+
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'Rfc_connection' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="Rfc_connection_serv-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Rfc_connection_serv-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#Rfc_connection_serv-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type 'type'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Rfc_connection_serv-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SapFuncError">class <strong>SapFuncError</strong></a>(<a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#SapFuncError">SapFuncError</a></dd>
+<dd><a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a>:<br>
+<dl><dt><a name="SapFuncError-__init__"><strong>__init__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="SapFuncError-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="SapFuncError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SapRfcError">class <strong>SapRfcError</strong></a>(<a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#SapRfcError">SapRfcError</a></dd>
+<dd><a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="pysap.html#BaseSapRfcError">BaseSapRfcError</a>:<br>
+<dl><dt><a name="SapRfcError-__init__"><strong>__init__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="SapRfcError-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="SapRfcError-__getitem__"><strong>__getitem__</strong></a>(...)</dt></dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Storage">class <strong>Storage</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Storage-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Storage-__getitem__"><strong>__getitem__</strong></a>(self, ky)</dt></dl>
+
+<dl><dt><a name="Storage-__init__"><strong>__init__</strong></a>(self, fname)</dt></dl>
+
+<dl><dt><a name="Storage-__setitem__"><strong>__setitem__</strong></a>(self, ky, obj)</dt></dl>
+
+<dl><dt><a name="Storage-close"><strong>close</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_SapFloat">class <strong>_SapFloat</strong></a>(<a href="ctypes.html#c_float">ctypes.c_float</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#_SapFloat">_SapFloat</a></dd>
+<dd><a href="ctypes.html#c_float">ctypes.c_float</a></dd>
+<dd><a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_SapFloat-_SapFloat__get_value"><strong>_SapFloat__get_value</strong></a> = __get_value(self)</dt></dl>
+
+<dl><dt><a name="_SapFloat-_SapFloat__set_value"><strong>_SapFloat__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ext_value</strong></dt>
+<dd><dl><dt><a name="_SapFloat-ext_value getter"><strong>ext_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapFloat-ext_value setter"><strong>ext_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>int_value</strong></dt>
+<dd><dl><dt><a name="_SapFloat-int_value getter"><strong>int_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapFloat-int_value setter"><strong>int_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="ctypes.html#c_float">ctypes.c_float</a>:<br>
+<dl><dt><a name="_SapFloat-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="ctypes.html#c_float">ctypes.c_float</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'c_float' objects&gt;</dl>
+
+<dl><dt><strong>_type_</strong> = 'f'</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><a name="_SapFloat-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.SimpleType object&gt;<dd><tt>T.<a href="#_SapFloat-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>_as_parameter_</strong> = &lt;attribute '_as_parameter_' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<dl><dt><strong>value</strong> = &lt;attribute 'value' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="_SapFloat-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="_SapFloat-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapFloat-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapFloat-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="_SapFloat-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="_SapFloat-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapFloat-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.SimpleType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_SapInt">class <strong>_SapInt</strong></a>(<a href="ctypes.html#c_int">ctypes.c_int</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#_SapInt">_SapInt</a></dd>
+<dd><a href="ctypes.html#c_int">ctypes.c_int</a></dd>
+<dd><a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_SapInt-_SapInt__get_value"><strong>_SapInt__get_value</strong></a> = __get_value(self)</dt></dl>
+
+<dl><dt><a name="_SapInt-_SapInt__set_value"><strong>_SapInt__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ext_value</strong></dt>
+<dd><dl><dt><a name="_SapInt-ext_value getter"><strong>ext_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt-ext_value setter"><strong>ext_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>int_value</strong></dt>
+<dd><dl><dt><a name="_SapInt-int_value getter"><strong>int_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt-int_value setter"><strong>int_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="ctypes.html#c_int">ctypes.c_int</a>:<br>
+<dl><dt><a name="_SapInt-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="ctypes.html#c_int">ctypes.c_int</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'c_int' objects&gt;</dl>
+
+<dl><dt><strong>_type_</strong> = 'i'</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><a name="_SapInt-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.SimpleType object&gt;<dd><tt>T.<a href="#_SapInt-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>_as_parameter_</strong> = &lt;attribute '_as_parameter_' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<dl><dt><strong>value</strong> = &lt;attribute 'value' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="_SapInt-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="_SapInt-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="_SapInt-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="_SapInt-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.SimpleType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_SapInt1">class <strong>_SapInt1</strong></a>(<a href="ctypes.html#c_byte">ctypes.c_byte</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#_SapInt1">_SapInt1</a></dd>
+<dd><a href="ctypes.html#c_byte">ctypes.c_byte</a></dd>
+<dd><a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_SapInt1-_SapInt1__get_value"><strong>_SapInt1__get_value</strong></a> = __get_value(self)</dt></dl>
+
+<dl><dt><a name="_SapInt1-_SapInt1__set_value"><strong>_SapInt1__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ext_value</strong></dt>
+<dd><dl><dt><a name="_SapInt1-ext_value getter"><strong>ext_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt1-ext_value setter"><strong>ext_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>int_value</strong></dt>
+<dd><dl><dt><a name="_SapInt1-int_value getter"><strong>int_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt1-int_value setter"><strong>int_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="ctypes.html#c_byte">ctypes.c_byte</a>:<br>
+<dl><dt><a name="_SapInt1-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="ctypes.html#c_byte">ctypes.c_byte</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'c_byte' objects&gt;</dl>
+
+<dl><dt><strong>_type_</strong> = 'b'</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><a name="_SapInt1-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.SimpleType object&gt;<dd><tt>T.<a href="#_SapInt1-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>_as_parameter_</strong> = &lt;attribute '_as_parameter_' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<dl><dt><strong>value</strong> = &lt;attribute 'value' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="_SapInt1-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="_SapInt1-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt1-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt1-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="_SapInt1-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="_SapInt1-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt1-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.SimpleType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_SapInt2">class <strong>_SapInt2</strong></a>(<a href="ctypes.html#c_short">ctypes.c_short</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#_SapInt2">_SapInt2</a></dd>
+<dd><a href="ctypes.html#c_short">ctypes.c_short</a></dd>
+<dd><a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_SapInt2-_SapInt2__get_value"><strong>_SapInt2__get_value</strong></a> = __get_value(self)</dt></dl>
+
+<dl><dt><a name="_SapInt2-_SapInt2__set_value"><strong>_SapInt2__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ext_value</strong></dt>
+<dd><dl><dt><a name="_SapInt2-ext_value getter"><strong>ext_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt2-ext_value setter"><strong>ext_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>int_value</strong></dt>
+<dd><dl><dt><a name="_SapInt2-int_value getter"><strong>int_value getter</strong></a> = __get_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_SapInt2-int_value setter"><strong>int_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<hr>
+Methods inherited from <a href="ctypes.html#c_short">ctypes.c_short</a>:<br>
+<dl><dt><a name="_SapInt2-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="ctypes.html#c_short">ctypes.c_short</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'c_short' objects&gt;</dl>
+
+<dl><dt><strong>_type_</strong> = 'h'</dl>
+
+<hr>
+Methods inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><a name="_SapInt2-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.SimpleType object&gt;<dd><tt>T.<a href="#_SapInt2-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>_as_parameter_</strong> = &lt;attribute '_as_parameter_' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<dl><dt><strong>value</strong> = &lt;attribute 'value' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="_SapInt2-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="_SapInt2-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt2-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_SapInt2-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="_SapInt2-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="_SapInt2-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#_SapInt2-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.SimpleType'&gt;</dl>
+
+</td></tr></table> 
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_Sap_string">class <strong>_Sap_string</strong></a>(<a href="ctypes.html#c_char_p">ctypes.c_char_p</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2>&nbsp;</td></tr>
+<tr><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysap.html#_Sap_string">_Sap_string</a></dd>
+<dd><a href="ctypes.html#c_char_p">ctypes.c_char_p</a></dd>
+<dd><a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_Sap_string-_Sap_string__convert_to_utf_8"><strong>_Sap_string__convert_to_utf_8</strong></a> = __convert_to_utf_8(self, v)</dt></dl>
+
+<dl><dt><a name="_Sap_string-_Sap_string__get_ext_value"><strong>_Sap_string__get_ext_value</strong></a> = __get_ext_value(self)</dt></dl>
+
+<dl><dt><a name="_Sap_string-_Sap_string__get_int_value"><strong>_Sap_string__get_int_value</strong></a> = __get_int_value(self)</dt></dl>
+
+<dl><dt><a name="_Sap_string-_Sap_string__set_value"><strong>_Sap_string__set_value</strong></a> = __set_value(self, v)</dt></dl>
+
+<dl><dt><a name="_Sap_string-__init__"><strong>__init__</strong></a>(self, v<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="_Sap_string-__setattr__"><strong>__setattr__</strong></a>(self, ky, v)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="_Sap_string-set_encoding"><strong>set_encoding</strong></a>(cls, encoding)<font color="#909090"><font face="helvetica, arial"> from _ctypes.SimpleType</font></font></dt></dl>
+
+<hr>
+Properties defined here:<br>
+<dl><dt><strong>ext_value</strong></dt>
+<dd><dl><dt><a name="_Sap_string-ext_value getter"><strong>ext_value getter</strong></a> = __get_ext_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_Sap_string-ext_value setter"><strong>ext_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<dl><dt><strong>int_value</strong></dt>
+<dd><dl><dt><a name="_Sap_string-int_value getter"><strong>int_value getter</strong></a> = __get_int_value(self)</dt></dl>
+</dd>
+<dd><dl><dt><a name="_Sap_string-int_value setter"><strong>int_value setter</strong></a> = __set_value(self, v)</dt></dl>
+</dd>
+</dl>
+<hr>
+Data and non-method functions defined here:<br>
+<dl><dt><strong>__doc__</strong> = None</dl>
+
+<dl><dt><strong>__module__</strong> = 'pysap'</dl>
+
+<dl><dt><strong>encoding</strong> = 'ascii'</dl>
+
+<hr>
+Methods inherited from <a href="ctypes.html#c_char_p">ctypes.c_char_p</a>:<br>
+<dl><dt><a name="_Sap_string-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="ctypes.html#c_char_p">ctypes.c_char_p</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dict-proxy object&gt;</dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;member '__weakref__' of 'c_char_p' objects&gt;</dl>
+
+<dl><dt><strong>_type_</strong> = 'z'</dl>
+
+<hr>
+Data and non-method functions inherited from <a href="_ctypes.html#_SimpleCData">_ctypes._SimpleCData</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of _ctypes.SimpleType object&gt;<dd><tt>T.<a href="#_Sap_string-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>_as_parameter_</strong> = &lt;attribute '_as_parameter_' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<dl><dt><strong>value</strong> = &lt;attribute 'value' of '_ctypes._SimpleCData' objects&gt;</dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="_Sap_string-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#_Sap_string-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from _ctypes._CData:<br>
+<dl><dt><strong>_b_base_</strong> = &lt;member '_b_base_' of '_ctypes._CData' objects&gt;</dl>
+
+<dl><dt><strong>_objects</strong> = &lt;member '_objects' of '_ctypes._CData' objects&gt;</dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><a name="_Sap_string-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#_Sap_string-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_Sap_string-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#_Sap_string-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="_Sap_string-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="_Sap_string-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#_Sap_string-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<hr>
+Data and non-method functions inherited from <a href="__builtin__.html#object">__builtin__.object</a>:<br>
+<dl><dt><strong>__class__</strong> = &lt;type '_ctypes.SimpleType'&gt;</dl>
+
+</td></tr></table></td></tr></table>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;&nbsp;</td>
+<td width="100%"><dl><dt><a name="-BCD"><strong>BCD</strong></a>(length, decs)</dt><dd><tt>SAP&nbsp;Packed&nbsp;datatype.&nbsp;Packed&nbsp;is&nbsp;basically&nbsp;a&nbsp;BCD&nbsp;(Binary&nbsp;Coded&nbsp;Decimal).<br>
+Sap&nbsp;Rfc&nbsp;routines&nbsp;are&nbsp;used&nbsp;to&nbsp;convert&nbsp;Packed&nbsp;to&nbsp;string&nbsp;and&nbsp;vice&nbsp;versa&nbsp;(see<br>
+RfcSetBcd&nbsp;and&nbsp;RfcGetBcd).<br>
+Internal&nbsp;value&nbsp;is&nbsp;a&nbsp;C&nbsp;UBYTE&nbsp;array&nbsp;holding&nbsp;SAP&nbsp;compatible&nbsp;representation&nbsp;of&nbsp;arguments&nbsp;value.<br>
+External&nbsp;value&nbsp;is&nbsp;a&nbsp;float&nbsp;or&nbsp;if&nbsp;the&nbsp;fixedpoint&nbsp;module&nbsp;is&nbsp;installed&nbsp;a&nbsp;FixedPoint&nbsp;instance.</tt></dd></dl>
+ <dl><dt><a name="-BYTES"><strong>BYTES</strong></a>(length)</dt><dd><tt>SAP&nbsp;BYTES&nbsp;datatype<br>
+I&nbsp;don't&nbsp;have&nbsp;much&nbsp;experience&nbsp;with&nbsp;this&nbsp;datatype.&nbsp;Errors&nbsp;are&nbsp;thus&nbsp;possible,&nbsp;so&nbsp;handle&nbsp;with&nbsp;care.</tt></dd></dl>
+ <dl><dt><a name="-DATE_STRING"><strong>DATE_STRING</strong></a>()</dt><dd><tt>SAP&nbsp;DATE&nbsp;datatype<br>
+Internal&nbsp;value&nbsp;is&nbsp;a&nbsp;string&nbsp;in&nbsp;format&nbsp;YYYYMMDD.<br>
+External&nbsp;value&nbsp;format&nbsp;is&nbsp;specified&nbsp;by&nbsp;RFC_DATE_FORMAT.</tt></dd></dl>
+ <dl><dt><a name="-NUM_STRING"><strong>NUM_STRING</strong></a>(length)</dt><dd><tt>SAP&nbsp;NUMC&nbsp;datatype&nbsp;(string&nbsp;representation&nbsp;of&nbsp;an&nbsp;integer&nbsp;value)<br>
+Internal&nbsp;value&nbsp;is&nbsp;a&nbsp;zero-filled&nbsp;string&nbsp;of&nbsp;length&nbsp;LENGTH.<br>
+External&nbsp;value&nbsp;is&nbsp;an&nbsp;integer.</tt></dd></dl>
+ <dl><dt><a name="-RfcGetBcd"><strong>RfcGetBcd</strong></a>(v, lng, decs)</dt><dd><tt>Helper&nbsp;function&nbsp;for&nbsp;SAP&nbsp;packed&nbsp;datatype&nbsp;(BCD)</tt></dd></dl>
+ <dl><dt><a name="-RfcSetBcd"><strong>RfcSetBcd</strong></a>(v, lng, decs)</dt><dd><tt>Helper&nbsp;function&nbsp;for&nbsp;SAP&nbsp;packed&nbsp;datatype&nbsp;(BCD)</tt></dd></dl>
+ <dl><dt><a name="-STRING"><strong>STRING</strong></a>(length)</dt><dd><tt>String&nbsp;type&nbsp;compatible&nbsp;with&nbsp;SAP&nbsp;CHAR&nbsp;datatype</tt></dd></dl>
+ <dl><dt><a name="-TIME_STRING"><strong>TIME_STRING</strong></a>()</dt><dd><tt>SAP&nbsp;TIME&nbsp;datatype<br>
+Internal&nbsp;value&nbsp;is&nbsp;a&nbsp;string&nbsp;of&nbsp;format&nbsp;HHMMSS.<br>
+External&nbsp;value&nbsp;format&nbsp;is&nbsp;specified&nbsp;by&nbsp;RFC_TIME_FORMAT.</tt></dd></dl>
+ <dl><dt><a name="-XBCD"><strong>XBCD</strong></a>(length, decs)</dt></dl>
+ <dl><dt><a name="-XBYTES"><strong>XBYTES</strong></a>(length, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XCHAR"><strong>XCHAR</strong></a>(length, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XDATE"><strong>XDATE</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XFLOAT"><strong>XFLOAT</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XINT"><strong>XINT</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt><dd><tt>#&nbsp;Helper&nbsp;functions&nbsp;used&nbsp;by&nbsp;structure&nbsp;builder</tt></dd></dl>
+ <dl><dt><a name="-XINT1"><strong>XINT1</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XINT2"><strong>XINT2</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XNUMC"><strong>XNUMC</strong></a>(length, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XSTRING"><strong>XSTRING</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-XTIME"><strong>XTIME</strong></a>(length<font color="#909090">=0</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-_do_conversion_in"><strong>_do_conversion_in</strong></a>(obj, v)</dt></dl>
+ <dl><dt><a name="-_do_conversion_out"><strong>_do_conversion_out</strong></a>(obj, v)</dt></dl>
+ <dl><dt><a name="-_sap_def"><strong>_sap_def</strong></a>(typ, lng, dec)</dt></dl>
+ <dl><dt><a name="-create_simple"><strong>create_simple</strong></a>(exid, lng<font color="#909090">=1</font>, decs<font color="#909090">=0</font>)</dt></dl>
+ <dl><dt><a name="-create_sort_func"><strong>create_sort_func</strong></a>(*fields)</dt><dd><tt>Function&nbsp;factory&nbsp;-&nbsp;creates&nbsp;sort&nbsp;function&nbsp;to&nbsp;use&nbsp;with&nbsp;sort&nbsp;method&nbsp;of&nbsp;<a href="#ItTable">ItTable</a>&nbsp;instances.<br>
+fields&nbsp;-&nbsp;tuples&nbsp;with&nbsp;three&nbsp;elements&nbsp;(triples?):<br>
+&nbsp;&nbsp;field&nbsp;name<br>
+&nbsp;&nbsp;field&nbsp;attribute&nbsp;-&nbsp;should&nbsp;be&nbsp;one&nbsp;of&nbsp;'int_value',&nbsp;'ext_value',&nbsp;or&nbsp;''&nbsp;(default,&nbsp;i.e.&nbsp;ext_value)<br>
+&nbsp;&nbsp;sort&nbsp;direction&nbsp;-&nbsp;0:&nbsp;ascending,&nbsp;1:&nbsp;descending<br>
+See&nbsp;<a href="#ItTable">ItTable</a>.sort&nbsp;documentation&nbsp;string&nbsp;for&nbsp;more&nbsp;info.</tt></dd></dl>
+ <dl><dt><a name="-create_struct"><strong>create_struct</strong></a>(desc)</dt><dd><tt>Class&nbsp;factory&nbsp;-&nbsp;creates&nbsp;a&nbsp;C&nbsp;structure&nbsp;compatible&nbsp;with&nbsp;SAP&nbsp;structure&nbsp;definition.<br>
+desc&nbsp;-&nbsp;list&nbsp;of&nbsp;field&nbsp;descriptions<br>
+Each&nbsp;field&nbsp;description&nbsp;is&nbsp;a&nbsp;tuple&nbsp;with&nbsp;at&nbsp;least&nbsp;two&nbsp;and&nbsp;at&nbsp;most&nbsp;four&nbsp;elements:<br>
+&nbsp;&nbsp;name&nbsp;(mandatory)<br>
+&nbsp;&nbsp;type&nbsp;(mandatory,&nbsp;SAP&nbsp;datatype&nbsp;-&nbsp;should&nbsp;be&nbsp;one&nbsp;of&nbsp;'C'&nbsp;,'N'&nbsp;,'P',&nbsp;'D',&nbsp;'T',&nbsp;'F',&nbsp;'I',&nbsp;or&nbsp;'X')<br>
+&nbsp;&nbsp;length&nbsp;(mandatory&nbsp;for&nbsp;types&nbsp;'C',&nbsp;'N',&nbsp;'P',&nbsp;and&nbsp;'X')<br>
+&nbsp;&nbsp;number&nbsp;of&nbsp;decimals&nbsp;(mandatory&nbsp;for&nbsp;type&nbsp;'P')<br>
+Example:<br>
+STRUCT=<a href="#-create_struct">create_struct</a>([('description','C',30),('date','D'),('value','P',16,2)])&nbsp;#Create&nbsp;structure&nbsp;class<br>
+s1=STRUCT()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Create&nbsp;structure&nbsp;instance<br>
+#Now&nbsp;let's&nbsp;fill&nbsp;the&nbsp;structure&nbsp;with&nbsp;some&nbsp;values<br>
+s1['description']='Item&nbsp;1'<br>
+s1['date']='16.1.2003'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#If&nbsp;you&nbsp;have&nbsp;mxDateTime&nbsp;package&nbsp;installed<br>
+#s1['date']='20030116'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#without&nbsp;mxDateTime&nbsp;package<br>
+s1['value']=10.45<br>
+print&nbsp;s1</tt></dd></dl>
+ <dl><dt><a name="-create_table"><strong>create_table</strong></a>(name, struc, occurs<font color="#909090">=0</font>, handle<font color="#909090">=0</font>)</dt><dd><tt>Helper&nbsp;function&nbsp;-&nbsp;creates&nbsp;an&nbsp;instance&nbsp;of&nbsp;<a href="#ItTable">ItTable</a>.<br>
+struct&nbsp;-&nbsp;list&nbsp;of&nbsp;field&nbsp;definitions&nbsp;(same&nbsp;format&nbsp;as&nbsp;for&nbsp;create_struct)<br>
+occurs&nbsp;-&nbsp;see&nbsp;SAP&nbsp;documentation</tt></dd></dl>
+ <dl><dt><a name="-date_parser"><strong>date_parser</strong></a>(datum)</dt></dl>
+ <dl><dt><a name="-setSystemCodePage"><strong>setSystemCodePage</strong></a>(cpage)</dt></dl>
+ <dl><dt><a name="-set_encoding"><strong>set_encoding</strong></a>(enc)</dt></dl>
+ <dl><dt><a name="-time_parser"><strong>time_parser</strong></a>(time)</dt></dl>
+</td></tr></table>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;&nbsp;</td>
+<td width="100%"><strong>RFC_DATE_FORMAT</strong> = '%d.%m.%Y'<br>
+<strong>RFC_SIMPLE_DATA</strong> = 0<br>
+<strong>RFC_STRUCTURE</strong> = 1<br>
+<strong>RFC_TABLE</strong> = 2<br>
+<strong>RFC_TIME_FORMAT</strong> = '%H:%M:%S'<br>
+<strong>RfcAddExportParam</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>RfcAddImportParam</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>RfcAddTable</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>RfcAllocParamSpace</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>RfcCallReceiveExt</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>RfcOpenEx</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>SAP_ARG_TYP</strong> = {'C': 0, 'D': 1, 'F': 7, 'I': 8, 'N': 6, 'P': 2, 'T': 3, 'X': 4, 'b': 10, 'g': 29, ...}<br>
+<strong>SAP_INIT_VALUES</strong> = {'C': ('ext_value', ' '), 'D': ('int_value', '00000000'), 'F': ('value', 0.0), 'I': ('value', 0), 'N': ('ext_value', 0), 'P': ('ext_value', 0.0), 'T': ('int_value', '000000'), 'b': ('value', 0), 'g': ('ext_value', ''), 's': ('value', 0)}<br>
+<strong>SAP_MAP</strong> = {'C': &lt;function XCHAR&gt;, 'D': &lt;function XDATE&gt;, 'F': &lt;function XFLOAT&gt;, 'I': &lt;function XINT&gt;, 'N': &lt;function XNUMC&gt;, 'P': &lt;function XBCD&gt;, 'T': &lt;function XTIME&gt;, 'X': &lt;function XBYTES&gt;, 'b': &lt;function XINT1&gt;, 'g': &lt;function XSTRING&gt;, ...}<br>
+<strong>__file__</strong> = './pysap.py'<br>
+<strong>__name__</strong> = 'pysap'<br>
+<strong>__version__</strong> = '1.0.0rc1'<br>
+<strong>bcd_to_char</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>char_to_bcd</strong> = &lt;ctypes._CdeclFuncPtr object&gt;<br>
+<strong>has_fp</strong> = 1<br>
+<strong>has_mx</strong> = 1<br>
+<strong>libc</strong> = &lt;CDLL '/lib/libc.so.6', handle 84b6858 at 8499efc&gt;<br>
+<strong>librfc</strong> = &lt;CDLL 'librfccm.so', handle 84d8730 at 8499f24&gt;</td></tr></table>
+</body></html>

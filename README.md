@@ -1,7 +1,7 @@
 NOTE: This was downloaded from sourceforge.net ([PYSAP][])
       It seems to be outdated but maybe can learn something from the code.
 	  
-	  Author of Code: [Klavdij Voncina][]
+Author of Code: [Klavdij Voncina][]
 
 [PYSAP]: https://sourceforge.net/projects/pysaprfc/
 [Klavdij Voncina]: https://github.com/klavdijv
